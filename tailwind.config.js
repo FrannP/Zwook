@@ -101,15 +101,20 @@ export default {
       /**----- BACKGROUND -----*/
       primaryBackground_Dark: '#0D121C',
       secondaryBackground_Dark: '#252A33'
-
-
-
-
-
-      /**----- BORDER -----*/
-
-      /**----- BACKGROUND -----*/
-      
+    },
+    fontWeight: {
+      regular: '400',
+      medium: '500',
+      semiBold: '600',
+      bold: '700',
+    },
+    fontSize: {
+      '2xl': '72px',
+      'xl': '60px',
+      'lg': '48px',
+      'md': '36px',
+      'sm': '30px',
+      'xs': '24px',
     },
     extend: {},
   },
