@@ -100,7 +100,10 @@ export default {
 
       /**----- BACKGROUND -----*/
       primaryBackground_Dark: '#0D121C',
-      secondaryBackground_Dark: '#252A33'
+      secondaryBackground_Dark: '#252A33',
+
+      /**----- SPECIAL -----*/
+      transparent: 'transparent',
     },
     fontWeight: {
       regular: '400',
