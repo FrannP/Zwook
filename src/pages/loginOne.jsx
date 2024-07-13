@@ -23,7 +23,7 @@ const SignupPrompt = () => (
   </div>
 );
 
-const Form = ({ email, setEmail, password, setPassword, handleSubmit, error }) => (
+const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
   <form className="flex flex-col gap-[20px] w-full" onSubmit={handleSubmit}>
     <TextInput
       icon={emailIcon}
@@ -31,7 +31,6 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit, error }) =
       type="email"
       value={email}
       onChange={(e) => setEmail(e.target.value)}
-      error={!!error}
     />
     <TextInput
       icon={passwordIcon}
@@ -39,7 +38,6 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit, error }) =
       type="password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
-      error={!!error}
     />
     <button
       className="text-darkText_Light font-regular text-md h-[44px] w-full rounded-[8px] bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
@@ -47,7 +45,6 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit, error }) =
     >
       Login
     </button>
-    {error && <p className="text-red-500 text-center mt-2">{error}</p>}
   </form>
 );
 
@@ -126,15 +123,16 @@ export default function Login() {
     <div className="absolute inset-0 bg-primaryBackground_Dark">
       <Decorations />
       <div className="flex flex-col absolute top-1/2 left-[25%] transform -translate-x-1/2 -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
-        <Header />
-        <SignupPrompt />
+        <div>
+          <Header />
+          <SignupPrompt />
+        </div>
         <Form
           email={email}
           setEmail={setEmail}
           password={password}
           setPassword={setPassword}
           handleSubmit={handleSubmit}
-          error={error}
         />
         <OrSeparator />
         <GoogleLoginButton />
