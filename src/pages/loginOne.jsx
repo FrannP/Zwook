@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TextInput from "./textInput";
-import CategoryCard from "./categoryCard";
+import TextInput from "../components/textInput";
+import CategoryCard from "../components/categoryCard";
 import emailIcon from "../assets/emailIcon.svg";
 import passwordIcon from "../assets/lock-2.svg";
 import lunaNova from "../assets/lunaNova.png";
@@ -14,8 +14,10 @@ const Header = () => (
 );
 
 const SignupPrompt = () => (
-  <div className="gap-[4px] flex flex-row text-center text-md font-medium flex justify-center">
-    <p className="text-primaryPlaceholderText_Light">Don’t have an account yet?</p>
+  <div className="gap-[4px] flex-row text-center text-md font-medium flex justify-center">
+    <p className="text-primaryPlaceholderText_Light">
+      Don’t have an account yet?
+    </p>
     <a href="">Sign Up</a>
   </div>
 );
@@ -59,7 +61,11 @@ const GoogleLoginButton = () => (
     className="flex justify-center gap-[8px] border-[1px] border-primaryBorder_Dark py-[12px] px-[20px] h-[44px] w-full rounded-[8px] bg-transparent hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out"
     type="submit"
   >
-    <img className="w-[13.53] h-[14.85]" src="src/assets/googleLogo.svg" alt="" />
+    <img
+      className="w-[13.53] h-[14.85]"
+      src="src/assets/googleLogo.svg"
+      alt=""
+    />
     <span className="text-md font-regular">Authorize with Google</span>
   </button>
 );
@@ -67,10 +73,28 @@ const GoogleLoginButton = () => (
 const Decorations = () => (
   <div className="absolute h-full bg-warningSurface_Dark w-[898px] right-0">
     <img src="src/assets/loginDecoOne.svg" alt="" />
-    <img className="absolute bottom-20 right-0" src="src/assets/loginDecoTwo.svg" alt="" />
-    <img className="absolute right-0 bottom-0" src="src\assets\Zwook -_ Dashboard.svg" alt="" />
-    <CategoryCard image={lunaNova} name="Luna Nova" bottom="435px" right="82px" />
-    <CategoryCard image={phantomEchoes} name="Phantom Echoes" left="129px" bottom="150px" />
+    <img
+      className="absolute bottom-20 right-0"
+      src="src/assets/loginDecoTwo.svg"
+      alt=""
+    />
+    <img
+      className="absolute right-0 bottom-0"
+      src="src\assets\Zwook -_ Dashboard.svg"
+      alt=""
+    />
+    <CategoryCard
+      image={lunaNova}
+      name="Luna Nova"
+      bottom="435px"
+      right="82px"
+    />
+    <CategoryCard
+      image={phantomEchoes}
+      name="Phantom Echoes"
+      left="129px"
+      bottom="150px"
+    />
   </div>
 );
 
@@ -101,7 +125,13 @@ export default function Login() {
           <Header />
           <SignupPrompt />
         </div>
-        <Form email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleSubmit={handleSubmit} />
+        <Form
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+        />
         <OrSeparator />
         <GoogleLoginButton />
       </div>
