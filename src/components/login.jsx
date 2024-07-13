@@ -7,6 +7,7 @@ import lunaNova from "../assets/lunaNova.png"
 import phantomEchoes from "../assets/phantomEchoes.png"
 
 
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -60,10 +61,9 @@ export default function Login() {
           <div>
             <p className="text-center font-semiBold text-xl">Welcome Back</p>
             <div className="gap-[4px] flex flex-row text-center text-md font-medium">
-              {" "}
               <p className="text-primaryPlaceholderText_Light">
                 Don’t have an account yet?
-              </p>{" "}
+              </p>
               <a href="">Sign Up</a>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function Login() {
               className="w-[13.53] h-[14.85]"
               src="src\assets\googleLogo.svg"
               alt=""
-            />{" "}
+            />
             <span className="text-md font-regular">Authorize with Google</span>
           </button>
         </div>
@@ -115,4 +115,4 @@ export default function Login() {
   );
 }
 
-//TODO: STANDARDIZIRAJ BG I BUTONE AKA PRETVORI U KOMPONENTE
+//TODO: NAPRAVI KOMPONENTE OD SVEGA
