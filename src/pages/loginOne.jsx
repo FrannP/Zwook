@@ -112,7 +112,7 @@ export default function Login() {
       return;
     }
 
-    if (email === "user@example.com" && password === "1234") {
+    if (email === "albert@flores.com" && password === "1234") {
       navigate("/dashboard");
     } else {
       setError("Invalid email or password");

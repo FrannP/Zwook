@@ -66,12 +66,12 @@ export default {
       warningText_Dark: '#EFCC44',
       errorText_Dark: '#F04438',
       successText_Dark: '#17B26A',
-      primaryPlaceholderText_Dark: '#17B26A',
+      primaryPlaceholderText_Dark: '#9AA3B2',
       neutralText_Dark: '#17B26A',
       darkText_Dark: '#0D121C',
 
       /**----- SURFACE -----*/
-      primarySurface_Dark: '#0D121C',
+      primarySurface_Dark: '#252A33',
       invertSurface_dark: '#FCFCFD',
       brandSurface_Dark: '#155EEF',
       errorSurface_Dark: '#F04438',
