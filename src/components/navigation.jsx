@@ -10,7 +10,7 @@ import stationsIcon from "../assets/icons/stationsIcon.svg";
 import podcastsIcon from "../assets/icons/podcastsIcon.svg";
 
 const NavItem = ({ icon, label, link, alert }) => (
-  <Link to={link} className="w-full">
+  <Link to={link} className="w-full hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
     <li className="font-medium text-md flex flex-row justify-between w-full px-[12px] py-[8px]">
       <div className="flex flex-row gap-[12px]">
         <img src={icon} alt={label} />
@@ -47,9 +47,9 @@ const PlanAlert = () =>(
             Your Premium account is coming to an end. Please update your credit card information.
         </p>
 
-        <Bar color="bg-text-warningSurface_Dark" backgroundColor="bg-primaryActiveSurface_dark" progress={83} />
+        <Bar color="#EFCC44" backgroundColor="bg-primaryActiveSurface_dark" progress={83} />
         <div className="flex gap-[12px]">
-            <button className="font-regular text-md">Dismiss</button>
+            <button className="font-regular text-md py-[8px] hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">Dismiss</button>
             <button className="font-regular text-md text-warningText_Dark">Upgrade Plan</button>
         </div>
     </div>
