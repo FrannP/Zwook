@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../components/textInput";
 import CategoryCard from "../components/categoryCard";
-import emailIcon from "../assets/emailIcon.svg";
-import passwordIcon from "../assets/lock-2.svg";
+import emailIcon from "../assets/icons/emailIcon.svg";
+import passwordIcon from "../assets/icons/lock-2.svg";
 import lunaNova from "../assets/lunaNova.png";
 import phantomEchoes from "../assets/phantomEchoes.png";
 
@@ -64,7 +64,7 @@ const GoogleLoginButton = () => (
   >
     <img
       className="w-[13.53] h-[14.85]"
-      src="src/assets/googleLogo.svg"
+      src="src/assets/icons/googleLogo.svg"
       alt=""
     />
     <span className="text-md font-regular">Authorize with Google</span>
@@ -112,7 +112,7 @@ export default function Login() {
       return;
     }
 
-    if (email === "user@example.com" && password === "password123") {
+    if (email === "user@example.com" && password === "1234") {
       navigate("/dashboard");
     } else {
       setError("Invalid email or password");
