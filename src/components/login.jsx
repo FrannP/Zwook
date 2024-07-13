@@ -1,7 +1,11 @@
 import { useState } from "react";
 import TextInput from "./textInput";
+import CategoryCard from "./categoryCard";
 import emailIcon from "../assets/emailIcon.svg";
 import passwordIcon from "../assets/lock-2.svg";
+import lunaNova from "../assets/lunaNova.png"
+import phantomEchoes from "../assets/phantomEchoes.png"
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -29,6 +33,21 @@ export default function Login() {
         <img src="src\assets\loginDecoOne.svg" alt="" />
         <img className="absolute bottom-20 right-0" src="src\assets\loginDecoTwo.svg" alt="" />
         <img className="absolute right-0 bottom-0" src="src\assets\Zwook -_ Dashboard.svg" alt="" />
+
+        <CategoryCard
+          
+          image = {lunaNova}
+          name = {"Luna Nova"}
+          bottom="435px"
+          right="82px" 
+        />
+
+        <CategoryCard
+          image = {phantomEchoes}
+          name = {"Phantom Echoes"}
+          left="129px"
+          bottom="150px" 
+        />
       </div>
 
       <div className="absolute top-1/2 left-[25%] transform -translate-x-1/2 -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
