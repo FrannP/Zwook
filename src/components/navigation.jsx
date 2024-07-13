@@ -57,7 +57,7 @@ const PlanAlert = () =>(
 
 export default function Navigation() {
   return (
-    <div className="w-[296px] h-full flex flex-col justify-between bg-secondaryBackground_Dark p-[24px]">
+    <div className="w-[296px] h-full flex flex-col justify-between bg-secondaryBackground_Dark border-r-[1px] border-primaryLighterBorder_Dark p-[24px]">
       <div className="flex flex-col items-center gap-[24px] justify-center">
         <img
           className="w-[248px] h-[76px]"
