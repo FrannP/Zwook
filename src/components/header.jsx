@@ -1,20 +1,8 @@
 import TextInput from "./textInput";
 import SearchIcon from "../assets/icons/searchIcon.svg"
+import Avatar from "./avatar"
 
-const Avatar = () =>(
-    <div className="flex gap-[8px]">
-        <div className="relative">
-            <img className="w-[40px] h-[40px]" src="src/assets/avatarImage.png" alt="Avatar" />
-            <div className="absolute bottom-0 right-0 w-[10px] h-[10px] bg-successText_Light rounded-full border-[1px] border-primarySurface_Dark"></div>
-        </div>
-        <div >
-            <h3 className="font-semiBold text-md ">Albert Flores</h3>
-            <div className="text-primaryPlaceholderText_Dark font-medium text-sm">
-                albert@flores.com
-            </div>
-        </div>
-    </div>
-);
+
 
 const ProfileHeaderOptions = () => (
         <div className="flex justify-center items-center gap-[20px]">
@@ -28,7 +16,7 @@ const ProfileHeaderOptions = () => (
             </div>
 
             <div className="flex gap-[12px]">
-                <Avatar/>
+                <Avatar fontWeight="font-bold" textSize="text-lg" mainText="Albert Flores" bottomText="albert@flores.com" img="src/assets/avatarImage.png"  statusVisible={true}/>
                 <button>
                     <img src="src\assets\icons\headerButtonThree.svg" alt="" />
                 </button>

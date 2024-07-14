@@ -8,6 +8,7 @@ import albumIcon from "../assets/icons/albumIcon.svg";
 import artistsIcon from "../assets/icons/artistsIcon.svg";
 import stationsIcon from "../assets/icons/stationsIcon.svg";
 import podcastsIcon from "../assets/icons/podcastsIcon.svg";
+import Bar from "./bar"
 
 const NavItem = ({ icon, label, link, alert }) => (
   <Link
@@ -30,15 +31,6 @@ const NavItem = ({ icon, label, link, alert }) => (
   </Link>
 );
 
-const Bar = ({ color, backgroundColor, progress }) => (
-  <div className={`h-[8px] w-full rounded-[360px] ${backgroundColor}`}>
-    <div
-      className="h-full rounded-[360px]"
-      style={{ width: `${progress}%`, backgroundColor: color }}
-    ></div>
-  </div>
-);
-
 const PlanAlert = () => (
   <div className="p-[16px] rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark w-full flex flex-col gap-[20px]">
     <div className="flex  items-center gap-[12px]">
@@ -52,9 +44,9 @@ const PlanAlert = () => (
     </p>
 
     <Bar
-      color="#EFCC44"
+      color="bg-warningSurface_Dark"
       backgroundColor="bg-primaryActiveSurface_dark"
-      progress={83}
+      progress={"w-[83%]"}
     />
     <div className="flex gap-[12px]">
       <button className="font-regular text-md py-[8px] hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
@@ -108,3 +100,5 @@ export default function Navigation() {
     </div>
   );
 }
+
+{/* TODO: when navigating to /dashboard or other make home or other navitem change color on that route */}

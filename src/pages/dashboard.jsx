@@ -1,5 +1,6 @@
 import Navigation from "../components/navigation";
 import Header from "../components/header";
+import MusicControl from "../components/musicControl";
 
 export default function Dashboard() {
   return (
@@ -7,7 +8,10 @@ export default function Dashboard() {
       <Navigation />
       <div className="flex-grow">
         <Header />
+        <MusicControl/>
+
       </div>
+      
     </div>
   );
 }
