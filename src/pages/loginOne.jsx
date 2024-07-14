@@ -59,7 +59,7 @@ const OrSeparator = () => (
 
 const GoogleLoginButton = () => (
   <button
-    className="flex justify-center gap-[8px] border-[1px] border-primaryBorder_Dark py-[12px] px-[20px] h-[44px] w-full rounded-[8px] bg-transparent hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out"
+    className="flex justify-center items-center gap-[8px] border-[1px] border-primaryBorder_Dark py-[12px] px-[20px] h-[44px] w-full rounded-[8px] bg-transparent hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out"
     type="submit"
   >
     <img
@@ -67,7 +67,7 @@ const GoogleLoginButton = () => (
       src="src/assets/icons/googleLogo.svg"
       alt=""
     />
-    <span className="text-md font-regular">Authorize with Google</span>
+    <span className="text-mdText font-regular">Authorize with Google</span>
   </button>
 );
 
@@ -122,7 +122,7 @@ export default function Login() {
   return (
     <div className="absolute inset-0 bg-primaryBackground_Dark">
       <Decorations />
-      <div className="flex flex-col absolute top-1/2 left-[25%] transform -translate-x-1/2 -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
+      <div className="flex flex-col absolute top-1/2 left-[274px] transform -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
         <div>
           <Header />
           <SignupPrompt />
