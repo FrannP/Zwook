@@ -5,7 +5,7 @@ import prevIcon from "../assets/icons/musicControls/prevIcon.svg"
 import playIcon from "../assets/icons/musicControls/playIcon.svg"
 import nextIcon from "../assets/icons/musicControls/nextIcon.svg"
 import repatIcon from "../assets/icons/musicControls/repeatIcon.svg"
-
+import VolumeSlider from "./volumeSlider";
 
 
 
@@ -57,7 +57,8 @@ export default function MusicControl() {
         statusVisible={false}
       />
       <Control currentLegth={"0:34"} songLength={"3:57"}/>
-      <div>AAAAAAAAAAAAAAAAA</div>
+      
+      <VolumeSlider/>
     </div>
   );
 }
