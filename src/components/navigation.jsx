@@ -71,17 +71,8 @@ export default function Navigation() {
         />
         <ul className="w-full flex flex-col gap-[16px]">
           <NavItem icon={HouseIcon} label="House" link="/dashboard" />
-          <NavItem
-            icon={deviceIcon}
-            label="Devices"
-            link="/dashboard"
-            alert="10"
-          />
-          <NavItem
-            icon={lightningIcon}
-            label="Subscriptions"
-            link="/dashboard"
-          />
+          <NavItem icon={deviceIcon} label="Devices" link="/dashboard" alert="10"/>
+          <NavItem icon={lightningIcon} label="Subscriptions" link="/dashboard"/>
           <NavItem icon={settingsIcon} label="Settings" link="/dashboard" />
           <NavItem icon={playListIcon} label="Playlists" link="/dashboard" />
           <NavItem icon={albumIcon} label="Albums" link="/dashboard" />
