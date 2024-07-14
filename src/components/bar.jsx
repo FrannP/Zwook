@@ -1,5 +1,5 @@
-const Bar = ({ color, backgroundColor, progress }) => (
-    <div className={`h-[8px] w-full rounded-[360px] ${backgroundColor}`}>
+const Bar = ({ color, backgroundColor, progress, height }) => (
+    <div className={`${height} w-full rounded-[360px] ${backgroundColor}`}>
         <div
         className={`h-full rounded-[360px] ${progress} ${color}`}
         ></div>

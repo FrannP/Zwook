@@ -44,6 +44,7 @@ const PlanAlert = () => (
     </p>
 
     <Bar
+      height={"h-[8px]"}
       color="bg-warningSurface_Dark"
       backgroundColor="bg-primaryActiveSurface_dark"
       progress={"w-[83%]"}
