@@ -26,7 +26,7 @@ const ProfileHeaderOptions = () => (
 
 export default function Header() {
     return (
-        <header className="px-[24px] py-[12px] flex border-b-[1px]  border-primaryLighterBorder_Dark justify-between">
+        <header className="fixed  top-0 left-[296px] right-0 px-[24px] py-[12px] flex border-b-[1px] bg-primaryBackground_Dark  border-primaryLighterBorder_Dark justify-between">
             <div className="w-[320px]">
                 <TextInput
                     icon={SearchIcon}

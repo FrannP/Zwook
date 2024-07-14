@@ -112,12 +112,21 @@ export default {
       bold: '700',
     },
     fontSize: {
-      'xl': '20px',
-      'l': '18px',
-      'lg': '16px',
-      'md': '14px',
-      'sm': '12px',
-      'xs': '10px',
+      /**----- TEXT -----*/
+      'xlText': '20px',
+      'lText': '18px',
+      'lgText': '16px',
+      'mdText': '14px',
+      'smText': '12px',
+      'xsText': '10px',
+
+      /**----- DISPLAY -----*/
+      'xl2Display': '72px',
+      'xlDisplay': '60px',
+      'lgDisplay': '48px',
+      'mdDisplay': '36px',
+      'smDisplay': '30px',
+      'xsDisplay': '24px',
     },
     lineHeight: {
       'xl': '32px',
