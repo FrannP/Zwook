@@ -11,12 +11,14 @@ export default function Avatar({
   img,
   imgBorder,
   statusVisible = true,
+  imgWidth = "w-auto",
+  imgHeight = "h-auto",
 }) {
   return (
     <div className="flex items-center gap-[8px]">
       <div className="relative">
         <div className={`${imgBorder}`}>
-          <img className="w-[40px] h-[40px]" src={img} alt="Avatar" />
+          <img className={`${imgWidth} ${imgHeight}`} src={img} alt="Avatar" />
         </div>
         <Status isVisible={statusVisible} />
       </div>

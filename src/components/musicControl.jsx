@@ -55,9 +55,11 @@ export default function MusicControl() {
           "rounded-[4px] border-[1px] border-primaryLighterBorder_Dark"
         }
         statusVisible={false}
+        imgHeight="h-[48px]"
+        imgWidth="w-[48px]"
       />
       <Control currentLegth={"0:34"} songLength={"3:57"}/>
-      
+
       <VolumeSlider/>
     </div>
   );
