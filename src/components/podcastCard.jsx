@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function PodcastCard({ title, category, status, img, link }) {
-  const statusColor = status === "online" ? "[#17B26A]" : "[#F04438]";
+  const statusColor = status === "online" ? "successSurface_Dark" : "errorSurface_Dark";
   const statusText = status === "online" ? "Online" : "Offline";
 
   return (
     <Link
       to={link}
-      className="relative w-[308px] h-[180px] rounded-[8px] overflow-hidden"
+      className="relative w-[308px] h-[180px] rounded-[8px] overflow-hidden flex-shrink-0"
     >
       <img
         className="object-cover w-full h-full rounded-[8px]"

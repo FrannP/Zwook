@@ -11,7 +11,7 @@ const PodcastsHeader = ({ title }) => (
 );
 
 const PodcastCardContainer = () => (
-  <section className='flex gap-[24px]'>
+  <section className='flex gap-[24px] overflow-x-auto py-[10px] no-scrollbar'>
     <PodcastCard img={podcastOne} title="Mind Matters" category="Premium" status="online" />
     <PodcastCard img={podcastOne} title="Tech Talk" category="Premium" status="offline" />
     <PodcastCard img={podcastOne} title="History Quest" category="Premium" status="online" />

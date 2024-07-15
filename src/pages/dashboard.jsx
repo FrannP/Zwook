@@ -8,8 +8,9 @@ export default function Dashboard() {
     <div className="flex text-primaryText_Dark absolute inset-0 bg-primaryBackground_Dark">
       <Navigation />
       <div className="flex-grow">
-        <Header />
+
         <DashboardContent />
+        <Header />
         <MusicControl />
       </div>
     </div>
