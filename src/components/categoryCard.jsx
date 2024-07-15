@@ -1,8 +1,6 @@
-// src/CategoryCard.js
 import React from 'react';
 
 export default function CategoryCard({ image, name, top, left, right, bottom }) {
-    // Determine if any of the position props are provided
     const isAbsolute = top !== undefined || left !== undefined || right !== undefined || bottom !== undefined;
 
     return (
