@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/loginOne'
 import Dashboard from './pages/dashboard'
 import NoPage from './pages/noPage'
+import AlbumPreview from './pages/albumPreview'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
           <Route index element={<Login />}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/album-preview' element={<AlbumPreview/>} />
           <Route path='*' element={<NoPage/>} />
 
         </Routes>

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function PodcastCard({ title, category, status, img, link }) {
-  const statusColor = status === "online" ? "successSurface_Dark" : "errorSurface_Dark";
-  const statusText = status === "online" ? "Online" : "Offline";
+  const statusColorClass = status === "online" ? "bg-successSurface_Dark" : "bg-errorSurface_Dark";
+  const statusTextClass = status === "online" ? "text-successSurface_Dark" : "text-errorSurface_Dark";
 
   return (
     <Link
@@ -16,12 +16,10 @@ export default function PodcastCard({ title, category, status, img, link }) {
         alt=""
       />
 
-      <div className="absolute top-[12px] right-[12px] flex items-center gap-[8px] rounded-[360px] bg-[#413F3A] bg-opacity-80 px-[8px] py-[4px]">
-        <div
-          className={`h-[12px] w-[12px] rounded-full ${"bg-" + statusColor}`}
-        ></div>
-        <div className={`${"text-" + statusColor} font-medium text-smText`}>
-          {statusText}
+      <div className="absolute top-[12px] right-[12px] flex items-center gap-[8px] rounded-full bg-[#413F3A] bg-opacity-80 px-[8px] py-[4px]">
+        <div className={`h-[12px] w-[12px] rounded-full ${statusColorClass}`}></div>
+        <div className={`font-medium text-smText ${statusTextClass}`}>
+          {status === "online" ? "Online" : "Offline"}
         </div>
       </div>
 
@@ -29,7 +27,7 @@ export default function PodcastCard({ title, category, status, img, link }) {
         <h3 className="font-medium text-mdText truncate text-neutralText_Light">
           {title}
         </h3>
-        <div className="flex items-center rounded-[360px] bg-brandSurface_Dark py-[4px] px-[8px]">
+        <div className="flex items-center rounded-full bg-brandSurface_Dark py-[4px] px-[8px]">
           <h2 className="text-xsText font-medium">{category}</h2>
         </div>
       </div>
