@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HouseIcon from "../assets/icons/house.svg";
 import lightningIcon from "../assets/icons/lightningIcon.svg";
 import settingsIcon from "../assets/icons/settingsIcon.svg";
@@ -10,26 +10,33 @@ import stationsIcon from "../assets/icons/stationsIcon.svg";
 import podcastsIcon from "../assets/icons/podcastsIcon.svg";
 import Bar from "./bar";
 
-const NavItem = ({ icon, label, link, alert }) => (
-  <Link
-    to={link}
-    className="w-full hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]"
-  >
-    <li className="font-medium text-md flex flex-row justify-between w-full px-[12px] py-[8px]">
-      <div className="flex flex-row gap-[12px]">
-        <img src={icon} alt={label} />
-        <div className="flex-grow">{label}</div>
-      </div>
-      {alert && (
-        <div className="rounded-[360px] bg-warningSurface_Dark">
-          <p className="text-darkText_Dark text-xs font-medium px-[8px] py-[4px]">
-            {alert}
-          </p>
+const NavItem = ({ icon, label, link, alert }) => {
+  const location = useLocation();
+  const isActive = location.pathname === link;
+
+  return (
+    <Link
+      to={link}
+      className={`w-full hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px] ${
+        isActive ? "bg-primaryActiveSurface_dark" : ""
+      }`}
+    >
+      <li className="font-medium text-md flex flex-row justify-between w-full px-[12px] py-[8px]">
+        <div className="flex flex-row gap-[12px]">
+          <img src={icon} alt={label} />
+          <div className="flex-grow">{label}</div>
         </div>
-      )}
-    </li>
-  </Link>
-);
+        {alert && (
+          <div className="rounded-[360px] bg-warningSurface_Dark">
+            <p className="text-darkText_Dark text-xs font-medium px-[8px] py-[4px]">
+              {alert}
+            </p>
+          </div>
+        )}
+      </li>
+    </Link>
+  );
+};
 
 const PlanAlert = () => (
   <div className="p-[16px] rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark w-full flex flex-col gap-[20px]">
@@ -74,23 +81,23 @@ export default function Navigation() {
           <NavItem
             icon={deviceIcon}
             label="Devices"
-            link="/dashboard"
+            link="/devices"
             alert="10"
           />
           <NavItem
             icon={lightningIcon}
             label="Subscriptions"
-            link="/dashboard"
+            link="/subscriptions"
           />
-          <NavItem icon={settingsIcon} label="Settings" link="/dashboard" />
-          <NavItem icon={playListIcon} label="Playlists" link="/dashboard" />
-          <NavItem icon={albumIcon} label="Albums" link="/dashboard" />
-          <NavItem icon={artistsIcon} label="Artists" link="/dashboard" />
-          <NavItem icon={stationsIcon} label="Stations" link="/dashboard" />
+          <NavItem icon={settingsIcon} label="Settings" link="/settings" />
+          <NavItem icon={playListIcon} label="Playlists" link="/playlists" />
+          <NavItem icon={albumIcon} label="Albums" link="/albums" />
+          <NavItem icon={artistsIcon} label="Artists" link="/artists" />
+          <NavItem icon={stationsIcon} label="Stations" link="/stations" />
           <NavItem
             icon={podcastsIcon}
             label="Podcasts"
-            link="/dashboard"
+            link="/podcasts"
             alert="Add New"
           />
         </ul>
@@ -100,8 +107,4 @@ export default function Navigation() {
       </div>
     </div>
   );
-}
-
-{
-  /* TODO: when navigating to /dashboard or other make home or other navitem change color on that route */
 }
