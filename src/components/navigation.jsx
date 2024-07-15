@@ -21,14 +21,14 @@ const NavItem = ({ icon, label, link, alert }) => {
         isActive ? "bg-primaryActiveSurface_dark" : ""
       }`}
     >
-      <li className="font-medium text-md flex flex-row justify-between w-full px-[12px] py-[8px]">
+      <li className="font-medium text-mdText flex flex-row justify-between w-full px-[12px] py-[8px]">
         <div className="flex flex-row gap-[12px]">
           <img src={icon} alt={label} />
           <div className="flex-grow">{label}</div>
         </div>
         {alert && (
           <div className="rounded-[360px] bg-warningSurface_Dark">
-            <p className="text-darkText_Dark text-xs font-medium px-[8px] py-[4px]">
+            <p className="text-darkText_Dark text-xsText font-medium px-[8px] py-[4px]">
               {alert}
             </p>
           </div>
@@ -42,10 +42,10 @@ const PlanAlert = () => (
   <div className="p-[16px] rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark w-full flex flex-col gap-[20px]">
     <div className="flex  items-center gap-[12px]">
       <img src="src\assets\icons\premiumIcon.svg" alt="" />
-      <h3 className="font-medium text-lg">Update Premium</h3>
+      <h3 className="font-medium text-lgText">Update Premium</h3>
     </div>
 
-    <p className="font-regular text-md text-primaryPlaceholderText_Light">
+    <p className="font-regular text-mdText text-primaryPlaceholderText_Light">
       Your Premium account is coming to an end. Please update your credit card
       information.
     </p>
@@ -57,10 +57,10 @@ const PlanAlert = () => (
       progress={"w-[83%]"}
     />
     <div className="flex gap-[12px]">
-      <button className="font-regular text-md py-[8px] hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
+      <button className="font-regular text-mdText py-[8px] hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
         Dismiss
       </button>
-      <button className="font-regular text-md text-warningText_Dark">
+      <button className="font-regular text-mdText text-warningText_Dark">
         Upgrade Plan
       </button>
     </div>

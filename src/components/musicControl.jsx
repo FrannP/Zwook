@@ -29,14 +29,14 @@ const Control = ({ songLength, currentLegth }) => (
       </div>
 
       <div className="w-[349px] flex items-center gap-[12px]">
-        <div className="font-regular text-xs text-primaryPlaceholderText_Dark">{currentLegth}</div>
+        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{currentLegth}</div>
         <Bar
           height={"h-[3px]"}
           color="bg-primaryText_Dark"
           backgroundColor="bg-primaryLighterBorder_Dark"
           progress={"w-[83%]"}
         />
-        <div className="font-regular text-xs text-primaryPlaceholderText_Dark">{songLength}</div>
+        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{songLength}</div>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ export default function MusicControl() {
   <div className="fixed bottom-0 left-[296px] right-0 px-[36px] py-[12px] flex border-t-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark justify-between">
     <Avatar
       fontWeight="font-regular"
-      textSize="text-md"
+      textSize="text-mdText"
       mainText="Artist Song"
       bottomText="Artist Name"
       img="src\assets\dashboardImages\currentSongImage.svg"

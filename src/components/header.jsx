@@ -16,7 +16,7 @@ const ProfileHeaderOptions = () => (
             </div>
 
             <div className="flex gap-[12px]">
-                <Avatar fontWeight="font-bold" textSize="text-lg" mainText="Albert Flores" bottomText="albert@flores.com" img="src/assets/avatarImage.png"  statusVisible={true}/>
+                <Avatar fontWeight="font-bold" textSize="text-lgText" mainText="Albert Flores" bottomText="albert@flores.com" img="src/assets/avatarImage.png"  statusVisible={true}/>
                 <button>
                     <img src="src\assets\icons\headerButtonThree.svg" alt="" />
                 </button>

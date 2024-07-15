@@ -5,7 +5,7 @@ const Status = ({ isVisible }) =>
 
 export default function Avatar({
   fontWeight = "font-semiBold",
-  textSize = "text-md",
+  textSize = "text-mdText",
   mainText,
   bottomText,
   img,
@@ -24,7 +24,7 @@ export default function Avatar({
       </div>
       <div>
         <h3 className={`${fontWeight} ${textSize}`}>{mainText}</h3>
-        <div className="text-primaryPlaceholderText_Dark font-medium text-sm">
+        <div className="text-primaryPlaceholderText_Dark font-medium text-smText">
           {bottomText}
         </div>
       </div>
