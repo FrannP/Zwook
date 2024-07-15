@@ -84,18 +84,15 @@ const Decorations = () => (
       src="src\assets\Zwook -_ Dashboard.svg"
       alt=""
     />
-    <CategoryCard
-      image={lunaNova}
-      name="Luna Nova"
-      bottom="435px"
-      right="82px"
-    />
-    <CategoryCard
-      image={phantomEchoes}
-      name="Phantom Echoes"
-      left="129px"
-      bottom="150px"
-    />
+    <div className="bottom-[435px] right-[82px] absolute">
+      <CategoryCard image={lunaNova} name="Luna Nova" />
+    </div>
+    <div className="left-[129px] bottom-[150px] absolute">
+      <CategoryCard
+        image={phantomEchoes}
+        name="Phantom Echoes"
+      />
+    </div>
   </div>
 );
 

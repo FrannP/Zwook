@@ -1,17 +1,10 @@
 import React from 'react';
-import Button from './button';
+import DashboardSectionHeader from './dashboardSectionHeader';
 import PodcastCard from './podcastCard';
 import podcastOne from '../assets/dashboardImages/podcastOne.svg';
 
-const PodcastsHeader = ({ title }) => (
-  <div className='flex justify-between items-center'>
-    <h2 className='text-xlText font-semiBold'>{title}</h2>
-    <Button label="View All" />
-  </div>
-);
-
 const PodcastCardContainer = () => (
-  <section className='flex gap-[24px] overflow-x-auto py-[10px] no-scrollbar'>
+  <section className='flex gap-[24px] overflow-x-auto no-scrollbar'>
     <PodcastCard img={podcastOne} title="Mind Matters" category="Premium" status="online" />
     <PodcastCard img={podcastOne} title="Tech Talk" category="Premium" status="offline" />
     <PodcastCard img={podcastOne} title="History Quest" category="Premium" status="online" />
@@ -23,7 +16,7 @@ const PodcastCardContainer = () => (
 export default function PodcastContainer() {
   return (
     <div className='flex flex-col gap-[20px]'>
-      <PodcastsHeader title="Podcasts" />
+      <DashboardSectionHeader title="Podcasts" buttonLabels={['View All']} />
       <PodcastCardContainer />
     </div>
   );

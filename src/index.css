@@ -19,8 +19,6 @@ input:focus {
     margin: 0;
     padding: 0; 
   }
-  
-  
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -43,4 +41,8 @@ input:focus {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
   }
+}
+
+body {
+  @apply bg-primaryBackground_Dark text-primaryText_Dark;
 }
