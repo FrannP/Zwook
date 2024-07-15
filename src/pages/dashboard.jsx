@@ -9,10 +9,9 @@ export default function Dashboard() {
       <Navigation />
       <div className="flex-grow">
         <Header />
-        <DashboardContent/>
-        <MusicControl/>
+        <DashboardContent />
+        <MusicControl />
       </div>
-      
     </div>
   );
 }

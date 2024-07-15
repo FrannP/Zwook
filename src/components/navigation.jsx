@@ -8,7 +8,7 @@ import albumIcon from "../assets/icons/albumIcon.svg";
 import artistsIcon from "../assets/icons/artistsIcon.svg";
 import stationsIcon from "../assets/icons/stationsIcon.svg";
 import podcastsIcon from "../assets/icons/podcastsIcon.svg";
-import Bar from "./bar"
+import Bar from "./bar";
 
 const NavItem = ({ icon, label, link, alert }) => (
   <Link
@@ -71,8 +71,17 @@ export default function Navigation() {
         />
         <ul className="w-full flex flex-col gap-[16px]">
           <NavItem icon={HouseIcon} label="House" link="/dashboard" />
-          <NavItem icon={deviceIcon} label="Devices" link="/dashboard" alert="10"/>
-          <NavItem icon={lightningIcon} label="Subscriptions" link="/dashboard"/>
+          <NavItem
+            icon={deviceIcon}
+            label="Devices"
+            link="/dashboard"
+            alert="10"
+          />
+          <NavItem
+            icon={lightningIcon}
+            label="Subscriptions"
+            link="/dashboard"
+          />
           <NavItem icon={settingsIcon} label="Settings" link="/dashboard" />
           <NavItem icon={playListIcon} label="Playlists" link="/dashboard" />
           <NavItem icon={albumIcon} label="Albums" link="/dashboard" />
@@ -93,4 +102,6 @@ export default function Navigation() {
   );
 }
 
-{/* TODO: when navigating to /dashboard or other make home or other navitem change color on that route */}
+{
+  /* TODO: when navigating to /dashboard or other make home or other navitem change color on that route */
+}
