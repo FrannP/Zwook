@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import abstractImageOne from "../assets/dashboardImages/abstract-image-1.svg";
 import abstractImageTwo from "../assets/dashboardImages/abstract-image-2.svg";
 
-const FeaturedCard = ({ link, title, text, img }) => (
+const FeaturedCard = ({ link, title, description, img }) => (
   <Link
     to={link}
     className=" relative w-full h-[300px] rounded-[8px] overflow-hidden"
@@ -20,7 +20,7 @@ const FeaturedCard = ({ link, title, text, img }) => (
         alt=""
       />
       <div className="flex flex-col-reverse ">
-        <p className="leading-md font-semiBold text-mdText truncate">{text}</p>
+        <p className="leading-md font-semiBold text-mdText truncate">{description}</p>
         <h1 className="leading-[94px] font-medium text-xl2Display truncate">
           {title}
         </h1>
@@ -36,7 +36,7 @@ export default function FeaturedContainerAlbum() {
       <FeaturedCard
         link="/dashboard"
         title="Midnight Melodies"
-        text="New release “Impressions” coming June,16"
+        description="New release “Impressions” coming June,16"
         img={abstractImageOne}
       />
     </section>

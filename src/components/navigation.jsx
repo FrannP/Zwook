@@ -90,14 +90,18 @@ export default function Navigation() {
             link="/subscriptions"
           />
           <NavItem icon={settingsIcon} label="Settings" link="/settings" />
-          <NavItem icon={playListIcon} label="Playlists" link="/album-preview" />
+          <NavItem
+            icon={playListIcon}
+            label="Playlists"
+            link="/album-preview"
+          />
           <NavItem icon={albumIcon} label="Albums" link="/albums" />
           <NavItem icon={artistsIcon} label="Artists" link="/artists" />
           <NavItem icon={stationsIcon} label="Stations" link="/stations" />
           <NavItem
             icon={podcastsIcon}
             label="Podcasts"
-            link="/podcasts"
+            link="/add-new-album"
             alert="Add New"
           />
         </ul>
