@@ -60,7 +60,7 @@ export default {
 
       /**----- TEXT -----*/
       primaryText_Dark: '#EEF2F6',
-      seocndaryText_Dark: '#CDD5DF',
+      secondaryText_Dark: '#CDD5DF',
       brandText_Dark: '#528BFF',
       invertText_Dark: '#121926',
       warningText_Dark: '#EFCC44',

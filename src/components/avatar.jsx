@@ -18,7 +18,7 @@ export default function Avatar({
     <div className="flex items-center gap-[8px]">
       <div className="relative">
         <div className={`${imgBorder}`}>
-          <img className={`${imgWidth} ${imgHeight}`} src={img} alt="Avatar" />
+          <img className={`${imgWidth} ${imgHeight} rounded-[3px]`} src={img} alt="Avatar" />
         </div>
         <Status isVisible={statusVisible} />
       </div>
