@@ -14,12 +14,17 @@ const FeaturedCard = ({ link, title, text, img }) => (
       alt=""
     />
     <div className="flex absolute bottom-0 left-0 right-0 p-[20px] gap-[24px]">
-    
-      <img className="w-159 h-150" src="src\assets\albumPreviewImages\Image.svg" alt="" />
-      <div >
-        <h4 className=" text-mdText font-semiBold">Playlist</h4>
-        <h1 className="font-medium text-xl2Display truncate">{title}</h1>
-        <p className="font-semiBold text-mdText truncate">{text}</p>
+      <img
+        className="w-159 h-150"
+        src="src\assets\albumPreviewImages\Image.svg"
+        alt=""
+      />
+      <div className="flex flex-col-reverse ">
+        <p className="leading-md font-semiBold text-mdText truncate">{text}</p>
+        <h1 className="leading-[94px] font-medium text-xl2Display truncate">
+          {title}
+        </h1>
+        <h4 className="leading-md text-mdText font-semiBold">Playlist</h4>
       </div>
     </div>
   </Link>

@@ -129,12 +129,21 @@ export default {
       'xsDisplay': '24px',
     },
     lineHeight: {
-      'xl': '32px',
-      'l': '28px',
-      'lg': '24px',
-      'md': '20px',
-      'sm': '16px',
-      'xs': '12px',
+      /**----- TEXT -----*/
+      'xlText': '32px',
+      'lText': '28px',
+      'lgText': '24px',
+      'mdText': '20px',
+      'smText': '16px',
+      'xsText': '12px',
+      
+      /**----- DISPLAY -----*/
+      'xl2Display': '90px',
+      'xlDisplay': '72px',
+      'ldDisplay': '48px',
+      'mdDisplay': '44px',
+      'smDisplay': '40px',
+      'xsDisplay': '36px',
     },
     extend: {},
   },
