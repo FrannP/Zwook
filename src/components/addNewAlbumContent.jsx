@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import checkIcon from "../assets/icons/newAlbum/check.svg";
 import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
+import deleteIcon from "../assets/icons/newAlbum/delete-1.svg";
 
 const Button = ({ label, backgroundColor, textColor, borderColor }) => {
   return (
     <input
       type="button"
-      className={`py-[12px] px-[20px]  rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer`}
+      className={`py-[12px] px-[20px] rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer`}
       value={label}
     />
   );
@@ -36,7 +37,7 @@ const TextInput = ({ label, placeholder }) => {
       <input
         type="text"
         placeholder={placeholder}
-        className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark bg-secondaryBackground_Dark "
+        className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark bg-secondaryBackground_Dark"
       />
     </label>
   );
@@ -62,7 +63,7 @@ const CheckboxInput = ({ label }) => {
           <img
             src={checkIcon}
             alt="Checked"
-            className="absolute left-[50%] -ml-[5px] -mt-[6.5px] top-[50%] w-[10px] h-[10px] filter invert  hover:cursor-pointer"
+            className="absolute left-[50%] -ml-[5px] -mt-[6.5px] top-[50%] w-[10px] h-[10px] filter invert hover:cursor-pointer"
           />
         )}
       </div>
@@ -110,11 +111,25 @@ const ImageUploadSection = () => {
 
   return (
     <section className="h-full flex justify-center items-center border-[1px] rounded-[8px] border-primaryBorder_Dark bg-secondaryBackground_Dark">
-      <div className="flex flex-col items-center gap-[8px]">
-        <div className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark">
-          <img src={cloudUploadIcon} alt="Cloud upload" />
+      {file ? (
+        <div className="relative">
+          <img
+            src={file}
+            alt="Uploaded file"
+            className="max-w-full h-auto rounded-[4px]"
+          />
+          <button
+            onClick={() => setFile(null)}
+            className="absolute top-[8px] right-[8px] w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Dark text-white p-[8px]"
+          >
+            <img src={deleteIcon} alt="Delete" />
+          </button>
         </div>
-        <div>
+      ) : (
+        <div className="flex flex-col items-center gap-[8px]">
+          <div className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark">
+            <img src={cloudUploadIcon} alt="Cloud upload" />
+          </div>
           <div>
             <label
               htmlFor="file-upload"
@@ -122,32 +137,27 @@ const ImageUploadSection = () => {
             >
               Click to upload
             </label>
-            <span className=" font-regular text-mdText">or drag and drop</span>
+            <span className="font-regular text-mdText">or drag and drop</span>
           </div>
-
-          <div className="flex justify-center">
+          <div className="flex justify-center font-regular text-mdText">
             SVG, PNG, JPEG, TIFF, or GIF
           </div>
           <input
             id="file-upload"
             type="file"
+            accept=".svg, .png, .jpeg, .jpg, .tiff, .gif"
             className="hidden"
             onChange={handleChange}
           />
         </div>
-        {file && (
-          <div className="rounded-[4px] ">
-            <img src={file} alt="Uploaded file" className="max-w-full h-auto" />
-          </div>
-        )}
-      </div>
+      )}
     </section>
   );
 };
 
 const ImageForm = () => {
   return (
-    <form className=" w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
+    <form className="w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
       <ImageUploadSection />
       <Button
         label="Upload Image"
