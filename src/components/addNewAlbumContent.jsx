@@ -91,7 +91,7 @@ const TextAreaInput = ({ label, placeholder }) => {
       <span className="font-regular text-mdText">{label}</span>
       <textarea
         placeholder={placeholder}
-        className="border-[1px] p-[8px] rounded-[4px] h-[151px] bg-secondaryBackground_Dark border-primaryBorder_Dark resize-none"
+        className="border-[1px] p-[8px] rounded-[4px] h-[151px] bg-secondaryBackground_Dark border-primaryBorder_Dark resize-none focus:outline-none"
       />
     </label>
   );
