@@ -3,11 +3,18 @@ import checkIcon from "../assets/icons/newAlbum/check.svg";
 import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
 import deleteIcon from "../assets/icons/newAlbum/delete-1.svg";
 
-const Button = ({ label, backgroundColor, textColor, borderColor }) => {
+const Button = ({
+  label,
+  backgroundColor,
+  textColor,
+  borderColor,
+  hoverColor,
+  hoverBorder,
+}) => {
   return (
     <input
       type="button"
-      className={`py-[12px] px-[20px] rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer`}
+      className={`py-[12px] px-[20px] rounded-[8px] border-solid border-[1px]  ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer ${hoverColor} ${hoverBorder} transition duration-500 ease-in-out`}
       value={label}
     />
   );
@@ -16,14 +23,20 @@ const Button = ({ label, backgroundColor, textColor, borderColor }) => {
 const Header = () => {
   return (
     <header className="flex justify-between">
-      <h1 className="font-medium text-smDisplay">Create New Podcast</h1>
-      <div className="flex gap-[12px]">
-        <Button label="Cancel" borderColor="border-primaryBorder_Dark" />
+      <h1 className="font-medium text-smDisplay ">Create New Podcast</h1>
+      <div className="flex gap-[12px] ">
+        <Button
+          label="Cancel"
+          borderColor="border-primaryBorder_Dark"
+          hoverColor="hover:bg-primaryActiveSurface_dark"
+        />
         <Button
           label="Save"
           textColor="text-darkText_Dark"
           borderColor="border-warningSurface_Dark"
           backgroundColor="bg-warningSurface_Dark"
+          hoverBorder="hover:border-brandHoverSurface_dark"
+          hoverColor="hover:bg-brandHoverSurface_dark"
         />
       </div>
     </header>
@@ -55,7 +68,7 @@ const CheckboxInput = ({ label }) => {
       <div className="relative">
         <input
           type="checkbox"
-          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer"
+          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer transition duration-500 ease-in-out"
           checked={checked}
           onChange={handleCheckboxChange}
         />
@@ -164,6 +177,8 @@ const ImageForm = () => {
         textColor="text-darkText_Dark"
         borderColor="border-warningSurface_Dark"
         backgroundColor="bg-warningSurface_Dark"
+        hoverBorder="hover:border-brandHoverSurface_dark"
+        hoverColor="hover:bg-brandHoverSurface_dark"
       />
     </form>
   );
