@@ -46,3 +46,11 @@ input:focus {
 body {
   @apply bg-primaryBackground_Dark text-primaryText_Dark;
 }
+
+
+
+::placeholder {
+  @apply text-primaryPlaceholderText_Dark;
+  @apply font-regular;
+  @apply text-mdText
+}

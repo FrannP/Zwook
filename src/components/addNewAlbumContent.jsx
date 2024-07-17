@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import checkIcon from "../assets/icons/newAlbum/check.svg";
 
 const Button = ({ label, backgroundColor, textColor, borderColor }) => {
   return (
@@ -31,15 +32,39 @@ const TextInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
       <span className="font-regular text-mdText">{label}</span>
-      <input type="text" placeholder={placeholder} className="border-[1px] border-gray-300 p-[8px] rounded-[4px]" />
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark bg-secondaryBackground_Dark "
+      />
     </label>
   );
 };
 
 const CheckboxInput = ({ label }) => {
+  const [checked, setChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
+
   return (
     <label className="flex items-center gap-[8px]">
-      <input type="checkbox" className="form-checkbox" />
+      <div className="relative">
+        <input
+          type="checkbox"
+          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer"
+          checked={checked}
+          onChange={handleCheckboxChange}
+        />
+        {checked && (
+          <img
+            src={checkIcon}
+            alt="Checked"
+            className="absolute left-[50%] -ml-[5px] -mt-[6.5px] top-[50%] w-[10px] h-[10px] filter invert  hover:cursor-pointer"
+          />
+        )}
+      </div>
       <span className="font-regular text-mdText">{label}</span>
     </label>
   );
@@ -49,17 +74,23 @@ const TextAreaInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
       <span className="font-regular text-mdText">{label}</span>
-      <textarea  placeholder={placeholder} className="border-[1px] border-gray-300 p-[8px] rounded-[4px]" />
+      <textarea
+        placeholder={placeholder}
+        className="border-[1px] p-[8px] rounded-[4px] bg-secondaryBackground_Dark border-primaryBorder_Dark"
+      />
     </label>
   );
 };
 
 const Form = () => {
   return (
-    <form className="flex flex-col gap-[20px]">
+    <form className="flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
       <TextInput label="Title" placeholder="Enter station title" />
       <TextInput label="Description link" placeholder="Enter website URL" />
-      <TextAreaInput label="Description" placeholder="Enter station description"/>
+      <TextAreaInput
+        label="Description"
+        placeholder="Enter station description"
+      />
       <CheckboxInput label="Status" />
       <CheckboxInput label="Premium" />
       <CheckboxInput label="Make Default" />
@@ -84,4 +115,3 @@ export default function addNewAlbumContent() {
     </div>
   );
 }
- 
