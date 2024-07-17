@@ -4,7 +4,7 @@ import shuffleIcon from "../assets/icons/musicControls/shuffleIcon.svg"
 import prevIcon from "../assets/icons/musicControls/prevIcon.svg"
 import playIcon from "../assets/icons/musicControls/playIcon.svg"
 import nextIcon from "../assets/icons/musicControls/nextIcon.svg"
-import repatIcon from "../assets/icons/musicControls/repeatIcon.svg"
+import repeatIcon from "../assets/icons/musicControls/repeatIcon.svg"
 import VolumeSlider from "./volumeSlider";
 
 
@@ -15,7 +15,7 @@ const ControlButton = ({link, height, width}) => (
     </button>
 );
 
-const Control = ({ songLength, currentLegth }) => (
+const Control = ({ songLength, currentLength }) => (
   <div className="h-full flex flex-col">
 
 
@@ -25,11 +25,11 @@ const Control = ({ songLength, currentLegth }) => (
         <ControlButton height={"h-[20px]"} width={"w-[20px]"} link={prevIcon}/>
         <ControlButton height={"h-[32px]"} width={"w-[32px]"} link={playIcon}/>
         <ControlButton height={"h-[20px]"} width={"w-[20px]"} link={nextIcon}/>
-        <ControlButton height={"h-[20px]"} width={"w-[20px]"} link={repatIcon}/>
+        <ControlButton height={"h-[20px]"} width={"w-[20px]"} link={repeatIcon}/>
       </div>
 
       <div className="w-[349px] flex items-center gap-[12px]">
-        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{currentLegth}</div>
+        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{currentLength}</div>
         <Bar
           height={"h-[3px]"}
           color="bg-primaryText_Dark"
