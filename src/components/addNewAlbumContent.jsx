@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import checkIcon from "../assets/icons/newAlbum/check.svg";
+import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
 
 const Button = ({ label, backgroundColor, textColor, borderColor }) => {
   return (
-    <button
-      className={`py-[12px] px-[20px]  rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular`}
-    >
-      {label}
-    </button>
+    <input
+      type="button"
+      className={`py-[12px] px-[20px]  rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer`}
+      value={label}
+    />
   );
 };
 
@@ -76,7 +77,7 @@ const TextAreaInput = ({ label, placeholder }) => {
       <span className="font-regular text-mdText">{label}</span>
       <textarea
         placeholder={placeholder}
-        className="border-[1px] p-[8px] rounded-[4px] bg-secondaryBackground_Dark border-primaryBorder_Dark"
+        className="border-[1px] p-[8px] rounded-[4px] h-[151px] bg-secondaryBackground_Dark border-primaryBorder_Dark resize-none"
       />
     </label>
   );
@@ -84,7 +85,7 @@ const TextAreaInput = ({ label, placeholder }) => {
 
 const Form = () => {
   return (
-    <form className="flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
+    <form className="w-[1043px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
       <TextInput label="Title" placeholder="Enter station title" />
       <TextInput label="Description link" placeholder="Enter website URL" />
       <TextAreaInput
@@ -99,10 +100,70 @@ const Form = () => {
   );
 };
 
+const ImageUploadSection = () => {
+  const [file, setFile] = useState(null);
+
+  const handleChange = (event) => {
+    const uploadedFile = URL.createObjectURL(event.target.files[0]);
+    setFile(uploadedFile);
+  };
+
+  return (
+    <section className="h-full flex justify-center items-center border-[1px] rounded-[8px] border-primaryBorder_Dark bg-secondaryBackground_Dark">
+      <div className="flex flex-col items-center gap-[8px]">
+        <div className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark">
+          <img src={cloudUploadIcon} alt="Cloud upload" />
+        </div>
+        <div>
+          <div>
+            <label
+              htmlFor="file-upload"
+              className="cursor-pointer text-brandText_Dark mr-[5px] font-medium text-mdText"
+            >
+              Click to upload
+            </label>
+            <span className=" font-regular text-mdText">or drag and drop</span>
+          </div>
+
+          <div className="flex justify-center">
+            SVG, PNG, JPEG, TIFF, or GIF
+          </div>
+          <input
+            id="file-upload"
+            type="file"
+            className="hidden"
+            onChange={handleChange}
+          />
+        </div>
+        {file && (
+          <div className="rounded-[4px] ">
+            <img src={file} alt="Uploaded file" className="max-w-full h-auto" />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+const ImageForm = () => {
+  return (
+    <form className=" w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
+      <ImageUploadSection />
+      <Button
+        label="Upload Image"
+        textColor="text-darkText_Dark"
+        borderColor="border-warningSurface_Dark"
+        backgroundColor="bg-warningSurface_Dark"
+      />
+    </form>
+  );
+};
+
 const FormSection = () => {
   return (
     <section className="flex gap-[20px]">
       <Form />
+      <ImageForm />
     </section>
   );
 };

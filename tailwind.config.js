@@ -145,6 +145,9 @@ export default {
       'smDisplay': '40px',
       'xsDisplay': '36px',
     },
+    fontFamily: {
+      sans: ['"Inter", sans-serif']
+    },
     extend: {},
   },
   plugins: [],
