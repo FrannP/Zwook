@@ -10,16 +10,20 @@ import phantomEchoes from "../assets/phantomEchoes.png";
 const Header = () => (
   <div className="flex flex-col items-center gap-[20px] justify-center">
     <img className="w-[186.63px] h-[52px]" src="src/assets/logo.svg" alt="" />
-    <p className="text-center font-semiBold text-xl">Welcome Back</p>
   </div>
 );
 
 const SignupPrompt = () => (
-  <div className="gap-[4px] flex-row text-center text-md font-medium flex justify-center">
-    <p className="text-primaryPlaceholderText_Light">
-      Don’t have an account yet?
-    </p>
-    <a href="">Sign Up</a>
+  <div className=" flex-col gap-[4px] text-center text-mdText font-medium flex justify-center">
+    <p className="text-center font-semiBold text-xlText">Welcome Back</p>
+    <div className="flex gap-[4px] justify-center">
+      <p className="text-primaryPlaceholderText_Dark text-mdText font-regular">
+        Don’t have an account yet?
+      </p>
+      <a className="text-mdText font-regular" href="">
+        Sign Up
+      </a>
+    </div>
   </div>
 );
 
@@ -40,7 +44,7 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
       onChange={(e) => setPassword(e.target.value)}
     />
     <button
-      className="text-darkText_Light font-regular text-md h-[44px] w-full rounded-[8px] bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
+      className="text-darkText_Light font-regular text-mdText h-[44px] w-full rounded-[8px] bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
       type="submit"
     >
       Login
@@ -51,7 +55,7 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
 const OrSeparator = () => (
   <div className="inline-flex items-center justify-center h-[20px] w-full">
     <hr className="w-full h-px my-8 bg-gray-200 border-0 bg-primaryBorder_Dark" />
-    <span className="absolute px-4 font-regular text-md text-primaryPlaceholderText_Light -translate-x-1/2 bg-secondaryBackground_Dark left-1/2">
+    <span className="absolute px-4 font-regular text-mdText text-primaryPlaceholderText_Light -translate-x-1/2 bg-secondaryBackground_Dark left-1/2">
       or
     </span>
   </div>
@@ -88,10 +92,7 @@ const Decorations = () => (
       <CategoryCard image={lunaNova} name="Luna Nova" />
     </div>
     <div className="left-[129px] bottom-[150px] absolute">
-      <CategoryCard
-        image={phantomEchoes}
-        name="Phantom Echoes"
-      />
+      <CategoryCard image={phantomEchoes} name="Phantom Echoes" />
     </div>
   </div>
 );
@@ -120,7 +121,7 @@ export default function Login() {
     <div className="absolute inset-0 bg-primaryBackground_Dark">
       <Decorations />
       <div className="flex flex-col absolute top-1/2 left-[274px] transform -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
-        <div>
+        <div className="flex flex-col gap-[20px]">
           <Header />
           <SignupPrompt />
         </div>
