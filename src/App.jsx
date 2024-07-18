@@ -24,6 +24,3 @@ export default function App() {
     </>
   )
 }
-
-// TODO (7.12):
-// MAKE LOGIN PAGE
