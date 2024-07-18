@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../components/textInput";
 import CategoryCard from "../components/categoryCard";
@@ -10,16 +10,20 @@ import phantomEchoes from "../assets/phantomEchoes.png";
 const Header = () => (
   <div className="flex flex-col items-center gap-[20px] justify-center">
     <img className="w-[186.63px] h-[52px]" src="src/assets/logo.svg" alt="" />
-    <p className="text-center font-semiBold text-xl">Welcome Back</p>
   </div>
 );
 
 const SignupPrompt = () => (
-  <div className="gap-[4px] flex-row text-center text-md font-medium flex justify-center">
-    <p className="text-primaryPlaceholderText_Light">
-      Don’t have an account yet?
-    </p>
-    <a href="">Sign Up</a>
+  <div className=" flex-col gap-[4px] text-center text-mdText font-medium flex justify-center">
+    <p className="text-center font-semiBold text-xlText">Welcome Back</p>
+    <div className="flex gap-[4px] justify-center">
+      <p className="text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark text-mdText font-regular">
+        Don’t have an account yet?
+      </p>
+      <a className="text-mdText font-medium" href="">
+        Sign Up
+      </a>
+    </div>
   </div>
 );
 
@@ -40,7 +44,7 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
       onChange={(e) => setPassword(e.target.value)}
     />
     <button
-      className="text-darkText_Light font-regular text-md h-[44px] w-full rounded-[8px] bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
+      className=" text-darkText_Light dark:text-darkText_Light font-regular text-mdText h-[44px] w-full rounded-[8px] bg-warningText_Dark dark:bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
       type="submit"
     >
       Login
@@ -50,8 +54,8 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
 
 const OrSeparator = () => (
   <div className="inline-flex items-center justify-center h-[20px] w-full">
-    <hr className="w-full h-px my-8 bg-gray-200 border-0 bg-primaryBorder_Dark" />
-    <span className="absolute px-4 font-regular text-md text-primaryPlaceholderText_Light -translate-x-1/2 bg-secondaryBackground_Dark left-1/2">
+    <hr className="w-full h-px my-8 bg-gray-200 border-0 bg-primaryBorder_Light dark:bg-primaryBorder_Dark" />
+    <span className="absolute px-4 font-regular text-mdText text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark -translate-x-1/2 bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark left-1/2">
       or
     </span>
   </div>
@@ -59,7 +63,7 @@ const OrSeparator = () => (
 
 const GoogleLoginButton = () => (
   <button
-    className="flex justify-center items-center gap-[8px] border-[1px] border-primaryBorder_Dark py-[12px] px-[20px] h-[44px] w-full rounded-[8px] bg-transparent hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out"
+    className="flex justify-center items-center gap-[8px] border-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark py-[12px] px-[20px] h-[44px] w-full rounded-[8px] bg-transparent dark:hover:bg-primaryActiveSurface_dark transition hover:bg-primaryActiveSurface_Light duration-500 ease-in-out"
     type="submit"
   >
     <img
@@ -71,30 +75,50 @@ const GoogleLoginButton = () => (
   </button>
 );
 
-const Decorations = () => (
-  <div className="absolute h-full bg-warningSurface_Dark w-[898px] left-0">
-    <img src="src/assets/loginDecoOne.svg" alt="" />
-    <img
-      className="absolute bottom-20 right-0"
-      src="src/assets/loginDecoTwo.svg"
-      alt=""
-    />
-    <img
-      className="absolute right-0 bottom-0"
-      src="src\assets\Zwook -_ Dashboard.svg"
-      alt=""
-    />
-    <div className="bottom-[435px] right-[82px] absolute">
-      <CategoryCard image={lunaNova} name="Luna Nova" />
-    </div>
-    <div className="left-[129px] bottom-[150px] absolute">
-      <CategoryCard
-        image={phantomEchoes}
-        name="Phantom Echoes"
+const Decorations = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const updateMode = (e) => {
+      setIsDarkMode(e.matches);
+    };
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    setIsDarkMode(mediaQuery.matches);
+
+    mediaQuery.addEventListener("change", updateMode);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMode);
+    };
+  }, []);
+
+  return (
+    <div className="absolute h-full bg-warningSurface_Light dark:bg-warningSurface_Dark w-[898px] left-0">
+      <img src="src/assets/loginDecoOne.svg" alt="" />
+      <img
+        className="absolute bottom-20 right-0"
+        src="src/assets/loginDecoTwo.svg"
+        alt=""
       />
+      <img
+        className="absolute right-0 bottom-0"
+        src={
+          isDarkMode
+            ? "src/assets/Zwook-Dashboard-Dark.svg"
+            : "src/assets/Zwook-Dashboard-Light.svg"
+        }
+        alt=""
+      />
+      <div className="bottom-[435px] right-[82px] absolute">
+        <CategoryCard image={lunaNova} name="Luna Nova" />
+      </div>
+      <div className="left-[129px] bottom-[150px] absolute">
+        <CategoryCard image={phantomEchoes} name="Phantom Echoes" />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -117,10 +141,10 @@ export default function Login() {
   };
 
   return (
-    <div className="absolute inset-0 bg-primaryBackground_Dark">
+    <div className="absolute inset-0 bg-primaryBackground_Light  dark:bg-primaryBackground_Dark">
       <Decorations />
-      <div className="flex flex-col absolute top-1/2 right-[274px] transform -translate-y-1/2 bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Dark">
-        <div>
+      <div className="flex flex-col absolute top-1/2 right-[274px] transform -translate-y-1/2 bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Light dark:text-primaryText_Dark">
+        <div className="flex flex-col gap-[20px]">
           <Header />
           <SignupPrompt />
         </div>
