@@ -17,18 +17,22 @@ const NavItem = ({ icon, label, link, alert }) => {
   return (
     <Link
       to={link}
-      className={`w-full hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px] ${
-        isActive ? "bg-primaryActiveSurface_dark" : ""
+      className={`w-full hover:bg-primaryActiveSurface_Light dark:hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px] ${
+        isActive
+          ? "bg-primaryActiveSurface_Light dark:bg-primaryActiveSurface_dark"
+          : ""
       }`}
     >
       <li className="font-medium text-mdText flex flex-row justify-between w-full px-[12px] py-[8px]">
         <div className="flex flex-row gap-[12px]">
           <img src={icon} alt={label} />
-          <div className="flex-grow">{label}</div>
+          <div className="flex-grow text-primaryText_Light dark:text-primaryText_Dark ">
+            {label}
+          </div>
         </div>
         {alert && (
-          <div className="rounded-[360px] bg-warningSurface_Dark">
-            <p className="text-darkText_Dark text-xsText font-medium px-[8px] py-[4px]">
+          <div className="rounded-[360px] bg-warningSurface_Light dark:bg-warningSurface_Dark">
+            <p className="text-darkText_Light dark:text-darkText_Dark text-xsText font-medium px-[8px] py-[4px]">
               {alert}
             </p>
           </div>
@@ -39,28 +43,30 @@ const NavItem = ({ icon, label, link, alert }) => {
 };
 
 const PlanAlert = () => (
-  <div className="p-[16px] rounded-[16px] border-solid border-[1px] border-primaryBorder_Dark w-full flex flex-col gap-[20px]">
+  <div className="p-[16px] rounded-[16px] border-solid border-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark w-full flex flex-col gap-[20px]">
     <div className="flex  items-center gap-[12px]">
       <img src="src\assets\icons\premiumIcon.svg" alt="" />
-      <h3 className="font-medium text-lgText">Update Premium</h3>
+      <h3 className="font-medium text-lgText text-primaryText_Light dark:text-primaryText_Dark">
+        Update Premium
+      </h3>
     </div>
 
-    <p className="font-regular text-mdText text-primaryPlaceholderText_Light">
+    <p className="font-regular text-mdText text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark">
       Your Premium account is coming to an end. Please update your credit card
       information.
     </p>
 
     <Bar
       height={"h-[8px]"}
-      color="bg-warningSurface_Dark"
-      backgroundColor="bg-primaryActiveSurface_dark"
+      color="bg-warningSurface_Light dark:bg-warningSurface_Dark"
+      backgroundColor="bg-primaryActiveSurface_Light dark:bg-primaryActiveSurface_dark"
       progress={"w-[83%]"}
     />
     <div className="flex gap-[12px]">
-      <button className="font-regular text-mdText py-[8px] hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
+      <button className="text-primaryText_Light dark:text-primaryText_Dark font-regular text-mdText py-[8px] hover:bg-primaryActiveSurface_Light dark:hover:bg-primaryActiveSurface_dark transition duration-500 ease-in-out rounded-[8px]">
         Dismiss
       </button>
-      <button className="font-regular text-mdText text-warningText_Dark">
+      <button className="font-regular text-mdText text-warningText_Light dark:text-warningText_Dark">
         Upgrade Plan
       </button>
     </div>
@@ -69,7 +75,7 @@ const PlanAlert = () => (
 
 export default function Navigation() {
   return (
-    <div className="fixed w-[296px] h-full flex flex-col justify-between bg-secondaryBackground_Dark border-r-[1px] border-primaryLighterBorder_Dark p-[24px]">
+    <div className="fixed w-[296px] h-full flex flex-col justify-between bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-r-[1px] border-x-primaryLighterBorder_Light dark:border-x-primaryLighterBorder_Dark p-[24px]">
       <div className="flex flex-col items-center gap-[24px] justify-center">
         <img
           className="w-[248px] h-[76px]"
