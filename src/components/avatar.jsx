@@ -1,6 +1,6 @@
 const Status = ({ isVisible }) =>
   isVisible ? (
-    <div className="absolute bottom-0 right-0 w-[10px] h-[10px] bg-successText_Light rounded-full border-[1px] border-primarySurface_Dark"></div>
+    <div className="absolute bottom-0 right-0 w-[10px] h-[10px] bg-successText_Light dark:bg-successText_Light rounded-full border-[1px] border-primarySurface_Light dark:border-primarySurface_Dark"></div>
   ) : null;
 
 export default function Avatar({
@@ -23,8 +23,8 @@ export default function Avatar({
         <Status isVisible={statusVisible} />
       </div>
       <div>
-        <h3 className={`${fontWeight} ${textSize}`}>{mainText}</h3>
-        <div className="text-primaryPlaceholderText_Dark font-medium text-smText">
+        <h3 className={`text-primaryText_Light dark:text-primaryText_Dark ${fontWeight} ${textSize}`}>{mainText}</h3>
+        <div className="text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark font-medium text-smText">
           {bottomText}
         </div>
       </div>

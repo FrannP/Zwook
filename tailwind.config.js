@@ -23,7 +23,7 @@ export default {
       darkText_Light: '#0D121C',
 
       /**----- SURFACE -----*/
-      primarySurface_Light: '##FCFCFD',
+      primarySurface_Light: '#FCFCFD',
       invertSurface_Light: '#252A33',
       brandSurface_Light: '#2970FF',
       warningSurface_Light: '#EFCC44',

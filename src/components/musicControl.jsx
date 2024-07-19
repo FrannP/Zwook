@@ -29,14 +29,14 @@ const Control = ({ songLength, currentLength }) => (
       </div>
 
       <div className="w-[349px] flex items-center gap-[12px]">
-        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{currentLength}</div>
+        <div className="font-regular text-xsText text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark">{currentLength}</div>
         <Bar
           height={"h-[3px]"}
-          color="bg-primaryText_Dark"
-          backgroundColor="bg-primaryLighterBorder_Dark"
+          color="bg-primaryText_Light dark:bg-primaryText_Dark"
+          backgroundColor="bg-primaryLighterBorder_Light dark:bg-primaryLighterBorder_Dark"
           progress={"w-[83%]"}
         />
-        <div className="font-regular text-xsText text-primaryPlaceholderText_Dark">{songLength}</div>
+        <div className="font-regular text-xsText text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark">{songLength}</div>
       </div>
     </div>
   </div>
@@ -44,14 +44,14 @@ const Control = ({ songLength, currentLength }) => (
 
 export default function MusicControl() {
   return (
-  <div className="fixed bottom-0 left-[296px] right-0 px-[36px] py-[12px] flex border-t-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark justify-between">
+  <div className="fixed bottom-0 left-[296px] right-0 px-[36px] py-[12px] flex border-t-[1px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark justify-between">
     <Avatar
       fontWeight="font-regular"
       textSize="text-mdText"
       mainText="Artist Song"
       bottomText="Artist Name"
       img="src\assets\dashboardImages\currentSongImage.svg"
-      imgBorder="rounded-[4px] border-[1px] border-primaryLighterBorder_Dark"
+      imgBorder="rounded-[4px] border-[1px] border-primaryLighterBorder dark:border-primaryLighterBorder_Dark"
       statusVisible={false}
       imgHeight="h-[48px]"
       imgWidth="w-[48px]"

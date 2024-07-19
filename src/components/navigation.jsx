@@ -26,7 +26,11 @@ const NavItem = ({ icon, label, link, alert }) => {
       <li className="font-medium text-mdText flex flex-row justify-between w-full px-[12px] py-[8px]">
         <div className="flex flex-row gap-[12px]">
           <img src={icon} alt={label} />
-          <div className="flex-grow text-primaryText_Light dark:text-primaryText_Dark ">
+          <div
+            className={`flex-grow text-secondaryText_Light dark:text-secondaryText_Dark ${
+              isActive ? "text-[#0D121C] dark:text-[#eef2f6]" : ""
+            }`}
+          >
             {label}
           </div>
         </div>
@@ -118,3 +122,4 @@ export default function Navigation() {
     </div>
   );
 }
+//TODO: change how svgs lode and add modifiers: --active for selected nav item, --light and --dark for theme changes 

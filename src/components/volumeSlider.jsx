@@ -11,7 +11,7 @@ export default function VolumeSlider() {
         <div className="flex justify-center items-center gap-[12px]">
         <img className='w-[20px] h-[20px]' src={soundIcon} alt="" />
 
-      <div className="w-[172px] h-[3px] bg-primaryLighterBorder_Dark relative rounded-[3px]">
+      <div className="w-[172px] h-[3px] bg-primaryLighterBorder_Light dark:bg-primaryLighterBorder_Dark relative rounded-[3px]">
         <input
           type="range"
           min="0"
@@ -21,7 +21,7 @@ export default function VolumeSlider() {
           className="slider"
         />
         <div
-          className="absolute top-0 left-0 h-full bg-primaryText_Dark rounded-[360px]"
+          className="absolute top-0 left-0 h-full bg-primaryText_Light dark:bg-primaryText_Dark rounded-[360px]"
           style={{ width: `${volume}%` }}
         ></div>
       </div>

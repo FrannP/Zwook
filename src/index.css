@@ -6,6 +6,7 @@
 
 *::before, *::after{
   font-family: "Inter", sans-serif;
+  
 }
 
 
@@ -51,7 +52,7 @@ input:focus {
 }
 
 body {
-  @apply bg-primaryBackground_Dark text-primaryText_Dark;
+  @apply bg-primaryBackground_Light text-primaryText_Light dark:bg-primaryBackground_Dark dark:text-primaryText_Dark ;
 }
 
 

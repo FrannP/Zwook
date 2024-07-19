@@ -16,7 +16,7 @@ const ProfileHeaderOptions = () => (
             </div>
 
             <div className="flex gap-[12px]">
-                <Avatar fontWeight="font-bold" textSize="text-lgText" mainText="Albert Flores" bottomText="albert@flores.com" img="src/assets/avatarImage.png"  statusVisible={true}/>
+                <Avatar imgBorder="border-" fontWeight="font-bold" textSize="text-lgText" mainText="Albert Flores" bottomText="albert@flores.com" img="src/assets/avatarImage.png"  statusVisible={true}/>
                 <button>
                     <img src="src\assets\icons\headerButtonThree.svg" alt="" />
                 </button>
@@ -26,7 +26,7 @@ const ProfileHeaderOptions = () => (
 
 export default function Header() {
     return (
-        <header className="fixed  top-0 left-[296px] right-0 px-[24px] py-[12px] flex border-b-[1px] bg-primaryBackground_Dark  border-primaryLighterBorder_Dark justify-between">
+        <header className="fixed  top-0 left-[296px] right-0 px-[24px] py-[12px] flex border-b-[1px] bg-primaryBackground_Light dark:bg-primaryBackground_Dark  border-primaryLighterBorder_Light dark:border-primaryLighterBorder_Dark justify-between">
             <div className="w-[320px]">
                 <TextInput
                     icon={SearchIcon}
