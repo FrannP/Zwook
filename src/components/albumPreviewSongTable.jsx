@@ -24,7 +24,7 @@ const AlbumSong = ({
           mainText={title}
           bottomText={titleSubtext}
           img={titleCover}
-          imgBorder="rounded-[4px] border-[1px] border-primaryLighterBorder_Dark"
+          imgBorder="rounded-[4px] border-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark"
           statusVisible={false}
           imgHeight="h-[40px]"
           imgWidth="w-[40px]"
@@ -46,7 +46,7 @@ const AlbumSong = ({
 const TableHead = ({ text, customStyles }) => {
   return (
     <th
-      className={`p-[16px] text-left font-semiBold text-smText text-secondaryText_Dark ${customStyles}`}
+      className={`p-[16px] text-left font-semiBold text-smText text-secondaryText_Light dark:text-secondaryText_Dark ${customStyles}`}
     >
       {text}
     </th>
@@ -163,7 +163,7 @@ export default function AlbumPreviewSongTable() {
 
   return (
     <table className="w-full">
-      <thead className="border-solid border-b-[1px] border-primaryBorder_Dark">
+      <thead className="border-solid border-b-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark">
         <tr>
           <TableHead text="#" customStyles="w-[50px] h-[48px]" />
           <TableHead text="Title" customStyles="ml-[32px]" />

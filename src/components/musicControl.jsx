@@ -51,7 +51,7 @@ export default function MusicControl() {
       mainText="Artist Song"
       bottomText="Artist Name"
       img="src\assets\dashboardImages\currentSongImage.svg"
-      imgBorder="rounded-[4px] border-[1px] border-primaryLighterBorder dark:border-primaryLighterBorder_Dark"
+      imgBorder="rounded-[4px] border-[1px] border-primaryLighterBorder_Light dark:border-primaryLighterBorder_Dark"
       statusVisible={false}
       imgHeight="h-[48px]"
       imgWidth="w-[48px]"

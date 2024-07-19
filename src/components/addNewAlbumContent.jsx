@@ -14,7 +14,7 @@ const Button = ({
   return (
     <input
       type="button"
-      className={`py-[12px] px-[20px] rounded-[8px] border-solid border-[1px]  ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer ${hoverColor} ${hoverBorder} transition duration-500 ease-in-out`}
+      className={` py-[12px] px-[20px] rounded-[8px] border-solid border-[1px]  ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer ${hoverColor} ${hoverBorder} transition duration-500 ease-in-out`}
       value={label}
     />
   );
@@ -23,20 +23,21 @@ const Button = ({
 const Header = () => {
   return (
     <header className="flex justify-between">
-      <h1 className="font-medium text-smDisplay ">Create New Podcast</h1>
+      <h1 className="font-medium text-smDisplay text-primaryText_Light dark:text-primaryText_Dark">Create New Podcast</h1>
       <div className="flex gap-[12px] ">
         <Button
           label="Cancel"
-          borderColor="border-primaryBorder_Dark"
-          hoverColor="hover:bg-primaryActiveSurface_dark"
+          textColor="dark:text-primaryText_Dark text-primaryText_Light hover:text-primaryText_Light"
+          borderColor="dark:border-primaryBorder_Dark border-primaryBorder_Light"
+          hoverColor="dark:hover:bg-primaryActiveSurface_Dark hover:bg-primaryActiveSurface_Light"
         />
         <Button
           label="Save"
-          textColor="text-darkText_Dark"
-          borderColor="border-warningSurface_Dark"
-          backgroundColor="bg-warningSurface_Dark"
-          hoverBorder="hover:border-brandHoverSurface_dark"
-          hoverColor="hover:bg-brandHoverSurface_dark"
+          textColor="dark:text-darkText_Dark text-darkText_Light"
+          borderColor="dark:border-warningSurface_Dark border-warningSurface_Light"
+          backgroundColor="dark:bg-warningSurface_Dark bg-warningSurface_Light"
+          hoverBorder="dark:hover:border-brandHoverSurface_Dark hover:border-brandHoverSurface_Light"
+          hoverColor="hover:bg-brandHoverSurface_Light dark:hover:bg-brandHoverSurface_Dark"
         />
       </div>
     </header>
@@ -46,11 +47,11 @@ const Header = () => {
 const TextInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
-      <span className="font-regular text-mdText">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
       <input
         type="text"
         placeholder={placeholder}
-        className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark bg-secondaryBackground_Dark"
+        className="text-mdText font-regular placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Light dark:border-primaryBorder_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
       />
     </label>
   );
@@ -68,7 +69,7 @@ const CheckboxInput = ({ label }) => {
       <div className="relative">
         <input
           type="checkbox"
-          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Dark border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer transition duration-500 ease-in-out"
+          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark  border-primaryBorder_Light dark:border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer transition duration-500 ease-in-out"
           checked={checked}
           onChange={handleCheckboxChange}
         />
@@ -80,7 +81,7 @@ const CheckboxInput = ({ label }) => {
           />
         )}
       </div>
-      <span className="font-regular text-mdText">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
     </label>
   );
 };
@@ -88,10 +89,10 @@ const CheckboxInput = ({ label }) => {
 const TextAreaInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
-      <span className="font-regular text-mdText">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
       <textarea
         placeholder={placeholder}
-        className="border-[1px] p-[8px] rounded-[4px] h-[151px] bg-secondaryBackground_Dark border-primaryBorder_Dark resize-none focus:outline-none"
+        className="text-mdText font-regular border-[1px] p-[8px] rounded-[4px] h-[151px] placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark resize-none focus:outline-none"
       />
     </label>
   );
@@ -99,7 +100,7 @@ const TextAreaInput = ({ label, placeholder }) => {
 
 const Form = () => {
   return (
-    <form className="w-[1043px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
+    <form className="w-[1043px] flex flex-col gap-[20px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Light dark:border-primaryLighterBorder_Dark p-[24px]">
       <TextInput label="Title" placeholder="Enter station title" />
       <TextInput label="Description link" placeholder="Enter website URL" />
       <TextAreaInput
@@ -123,7 +124,7 @@ const ImageUploadSection = () => {
   };
 
   return (
-    <section className="h-full flex justify-center items-center border-[1px] rounded-[8px] border-primaryBorder_Dark bg-secondaryBackground_Dark">
+    <section className="h-full flex justify-center items-center border-[1px] rounded-[8px] border-primaryBorder_Light dark:border-primaryBorder_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark">
       {file ? (
         <div className="relative">
           <img
@@ -133,26 +134,26 @@ const ImageUploadSection = () => {
           />
           <button
             onClick={() => setFile(null)}
-            className="absolute top-[8px] right-[8px] w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Dark text-white p-[8px]"
+            className="absolute top-[8px] right-[8px] w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Light dark:bg-errorSurface_Dark text-white p-[8px]"
           >
             <img src={deleteIcon} alt="Delete" />
           </button>
         </div>
       ) : (
         <div className="flex flex-col items-center gap-[8px]">
-          <div className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Dark">
+          <div className="border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Light dark:border-primaryBorder_Dark">
             <img src={cloudUploadIcon} alt="Cloud upload" />
           </div>
           <div>
             <label
               htmlFor="file-upload"
-              className="cursor-pointer text-brandText_Dark mr-[5px] font-medium text-mdText"
+              className="cursor-pointer text-brandText_Light dark:text-brandText_Dark mr-[5px] font-medium text-mdText"
             >
               Click to upload
             </label>
-            <span className="font-regular text-mdText">or drag and drop</span>
+            <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">or drag and drop</span>
           </div>
-          <div className="flex justify-center font-regular text-mdText">
+          <div className="flex justify-center font-regular text-mdText text-secondaryText_Light dark:text-secondaryText_Dark">
             SVG, PNG, JPEG, TIFF, or GIF
           </div>
           <input
@@ -170,15 +171,15 @@ const ImageUploadSection = () => {
 
 const ImageForm = () => {
   return (
-    <form className="w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Dark p-[24px]">
+    <form className="w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Light dark:border-primaryLighterBorder_Dark p-[24px]">
       <ImageUploadSection />
       <Button
         label="Upload Image"
-        textColor="text-darkText_Dark"
-        borderColor="border-warningSurface_Dark"
-        backgroundColor="bg-warningSurface_Dark"
-        hoverBorder="hover:border-brandHoverSurface_dark"
-        hoverColor="hover:bg-brandHoverSurface_dark"
+        textColor="dark:text-darkText_Dark text-darkText_Light"
+        borderColor="border-warningSurface_Light dark:border-warningSurface_Dark"
+        backgroundColor="dark:bg-warningSurface_Dark bg-warningSurface_Light"
+        hoverBorder="dark:hover:border-brandHoverSurface_Dark hover:border-brandHoverSurface_Light"
+        hoverColor="dark:hover:bg-brandHoverSurface_Dark hover:bg-brandHoverSurface_Light"
       />
     </form>
   );
