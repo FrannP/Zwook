@@ -14,7 +14,7 @@ const Button = ({
   return (
     <input
       type="button"
-      className={` py-[12px] px-[20px] rounded-[8px] border-solid border-[1px]  ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer ${hoverColor} ${hoverBorder} transition duration-500 ease-in-out`}
+      className={`py-[12px] px-[20px] rounded-[8px] border-solid border-[1px] ${borderColor} ${backgroundColor} ${textColor} text-mdText font-regular hover:cursor-pointer ${hoverColor} ${hoverBorder} transition duration-500 ease-in-out`}
       value={label}
     />
   );
@@ -23,7 +23,9 @@ const Button = ({
 const Header = () => {
   return (
     <header className="flex justify-between">
-      <h1 className="font-medium text-smDisplay text-primaryText_Light dark:text-primaryText_Dark">Create New Podcast</h1>
+      <h1 className="font-medium text-smDisplay text-primaryText_Light dark:text-primaryText_Dark">
+        Create New Podcast
+      </h1>
       <div className="flex gap-[12px] ">
         <Button
           label="Cancel"
@@ -47,7 +49,9 @@ const Header = () => {
 const TextInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
-      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+        {label}
+      </span>
       <input
         type="text"
         placeholder={placeholder}
@@ -69,7 +73,11 @@ const CheckboxInput = ({ label }) => {
       <div className="relative">
         <input
           type="checkbox"
-          className="appearance-none w-[16px] h-[16px] border-[1px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark  border-primaryBorder_Light dark:border-primaryBorder_Dark rounded-[4px] hover:border-brandBorder_Dark hover:bg-brandActiveSurface_Dark hover:cursor-pointer transition duration-500 ease-in-out"
+          className={`appearance-none w-[16px] h-[16px] border-[1px] rounded-[4px] hover:cursor-pointer transition duration-500 ease-in-out ${
+            checked
+              ? "bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
+              : "bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark"
+          }`}
           checked={checked}
           onChange={handleCheckboxChange}
         />
@@ -81,7 +89,9 @@ const CheckboxInput = ({ label }) => {
           />
         )}
       </div>
-      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+        {label}
+      </span>
     </label>
   );
 };
@@ -89,7 +99,9 @@ const CheckboxInput = ({ label }) => {
 const TextAreaInput = ({ label, placeholder }) => {
   return (
     <label className="flex flex-col gap-[8px]">
-      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">{label}</span>
+      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+        {label}
+      </span>
       <textarea
         placeholder={placeholder}
         className="text-mdText font-regular border-[1px] p-[8px] rounded-[4px] h-[151px] placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark resize-none focus:outline-none"
@@ -151,7 +163,9 @@ const ImageUploadSection = () => {
             >
               Click to upload
             </label>
-            <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">or drag and drop</span>
+            <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+              or drag and drop
+            </span>
           </div>
           <div className="flex justify-center font-regular text-mdText text-secondaryText_Light dark:text-secondaryText_Dark">
             SVG, PNG, JPEG, TIFF, or GIF
