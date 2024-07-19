@@ -12,7 +12,6 @@ export default function Dashboard() {
           <AddNewAlbumContent />
         </div>
         <Header />
-        <MusicControl />
       </div>
     </div>
   );
