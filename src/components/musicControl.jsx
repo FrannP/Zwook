@@ -44,7 +44,7 @@ const Control = ({ songLength, currentLength }) => (
 
 export default function MusicControl() {
   return (
-  <div className="fixed bottom-0 left-[296px] right-0 px-[36px] py-[12px] flex border-t-[1px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark justify-between">
+  <div className="drop-shadow-[0_-4px_8px _rgba(0, 0, 0, 0.05)] fixed bottom-0 left-[296px] right-0 px-[36px] py-[12px] flex border-t-[1px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark justify-between">
     <Avatar
       fontWeight="font-regular"
       textSize="text-mdText"
