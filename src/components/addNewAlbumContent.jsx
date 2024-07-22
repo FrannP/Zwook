@@ -183,18 +183,30 @@ const ImageUploadSection = () => {
   );
 };
 
+const UploadImageButton = () => {
+  return (
+    <>
+      <label
+        htmlFor="file-upload"
+        className="text-center py-[12px] px-[20px] rounded-[8px] border-solid border-[1px] text-mdText font-regular hover:cursor-pointer transition duration-500 ease-in-out dark:text-darkText_Dark text-darkText_Light border-warningSurface_Light dark:border-warningSurface_Dark dark:bg-warningSurface_Dark bg-warningSurface_Light dark:hover:border-brandHoverSurface_Dark hover:border-brandHoverSurface_Light dark:hover:bg-brandHoverSurface_Dark hover:bg-brandHoverSurface_Light"
+      >
+        Upload Image
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        accept=".svg, .png, .jpeg, .jpg, .tiff, .gif"
+        className="hidden"
+      />
+    </>
+  );
+};
+
 const ImageForm = () => {
   return (
     <form className="w-[489px] flex flex-col gap-[20px] bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-[1px] border-primaryLighterBorder_Light dark:border-primaryLighterBorder_Dark p-[24px]">
       <ImageUploadSection />
-      <Button
-        label="Upload Image"
-        textColor="dark:text-darkText_Dark text-darkText_Light"
-        borderColor="border-warningSurface_Light dark:border-warningSurface_Dark"
-        backgroundColor="dark:bg-warningSurface_Dark bg-warningSurface_Light"
-        hoverBorder="dark:hover:border-brandHoverSurface_Dark hover:border-brandHoverSurface_Light"
-        hoverColor="dark:hover:bg-brandHoverSurface_Dark hover:bg-brandHoverSurface_Light"
-      />
+      <UploadImageButton />
     </form>
   );
 };
