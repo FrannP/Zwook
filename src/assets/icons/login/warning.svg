@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .icon-path {
+      stroke: #F04438;
+    }
+
+    
+
+    @media (prefers-color-scheme: light) {
+      .icon-path {
+        stroke: #F04438;
+      }
+    }
+  </style>
+<path class="icon-path" d="M8 15.4286C12.1027 15.4286 15.4286 12.1027 15.4286 8C15.4286 3.89731 12.1027 0.571426 8 0.571426C3.89731 0.571426 0.57143 3.89731 0.57143 8C0.57143 12.1027 3.89731 15.4286 8 15.4286Z" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="icon-path" d="M8 4V7.42857" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="icon-path" d="M8 11.4286C8.31559 11.4286 8.57143 11.1727 8.57143 10.8571C8.57143 10.5416 8.31559 10.2857 8 10.2857C7.68441 10.2857 7.42857 10.5416 7.42857 10.8571C7.42857 11.1727 7.68441 11.4286 8 11.4286Z" stroke="#0D121C" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

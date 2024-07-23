@@ -27,7 +27,17 @@ const SignupPrompt = () => (
   </div>
 );
 
-const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
+const Form = ({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  handleSubmit,
+  emailError,
+  passwordError,
+  emailErrorMessage,
+  passwordErrorMessage,
+}) => (
   <form className="flex flex-col gap-[20px] w-full" onSubmit={handleSubmit}>
     <TextInput
       icon={emailIcon}
@@ -35,6 +45,8 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
       type="email"
       value={email}
       onChange={(e) => setEmail(e.target.value)}
+      error={emailError}
+      errorMessage={emailErrorMessage}
     />
     <TextInput
       icon={passwordIcon}
@@ -42,9 +54,11 @@ const Form = ({ email, setEmail, password, setPassword, handleSubmit }) => (
       type="password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
+      error={passwordError}
+      errorMessage={passwordErrorMessage}
     />
     <button
-      className=" text-darkText_Light dark:text-darkText_Light font-regular text-mdText h-[44px] w-full rounded-[8px] bg-warningText_Dark dark:bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
+      className="text-darkText_Light dark:text-darkText_Light font-regular text-mdText h-[44px] w-full rounded-[8px] bg-warningText_Dark dark:bg-warningText_Dark hover:bg-brandHoverSurface_Light transition duration-500 ease-in-out"
       type="submit"
     >
       Login
@@ -123,20 +137,46 @@ const Decorations = () => {
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      setError("Both fields are required");
-      return;
-    }
+    let hasError = false;
 
-    if (email === "albert@flores.com" && password === "1234") {
-      navigate("/dashboard");
+    if (!email || !password) {
+      setEmailError(!email);
+      setPasswordError(!password);
+      setEmailErrorMessage(!email ? "Validation error" : "");
+      setPasswordErrorMessage(!password ? "Validation error" : "");
+      setError("Both fields are required");
+      hasError = true;
     } else {
-      setError("Invalid email or password");
+      setEmailError(false);
+      setPasswordError(false);
+      setEmailErrorMessage("");
+      setPasswordErrorMessage("");
+
+      if (email !== "albert@flores.com") {
+        setEmailError(true);
+        setEmailErrorMessage("Validation error");
+        hasError = true;
+      }
+
+      if (password !== "1234") {
+        setPasswordError(true);
+        setPasswordErrorMessage("Validation error");
+        hasError = true;
+      }
+
+      if (!hasError) {
+        navigate("/dashboard");
+      } else {
+        setError("Invalid email or password");
+      }
     }
   };
 
@@ -154,6 +194,10 @@ export default function Login() {
           password={password}
           setPassword={setPassword}
           handleSubmit={handleSubmit}
+          emailError={emailError}
+          passwordError={passwordError}
+          emailErrorMessage={emailErrorMessage}
+          passwordErrorMessage={passwordErrorMessage}
         />
         <OrSeparator />
         <GoogleLoginButton />

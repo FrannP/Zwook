@@ -60,7 +60,7 @@ const TextInput = ({ label, placeholder, value, onChange, name }) => {
       <input
         type="text"
         placeholder={placeholder}
-        className="text-mdText font-regular placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Light dark:border-primaryBorder_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
+        className="text-mdText font-regular placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryText_Light dark:text-primaryText_Dark border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Light dark:border-primaryBorder_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
         value={value}
         onChange={(e) => onChange(name, e.target.value)}
         name={name}
@@ -78,7 +78,7 @@ const TextAreaInput = ({ label, placeholder, value, onChange, name }) => {
       </span>
       <textarea
         placeholder={placeholder}
-        className="text-mdText font-regular border-[1px] p-[8px] rounded-[4px] h-[151px] placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark resize-none focus:outline-none"
+        className="text-mdText font-regular border-[1px] p-[8px] rounded-[4px] h-[151px] placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryText_Light dark:text-primaryText_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark resize-none focus:outline-none"
         value={value}
         onChange={(e) => onChange(name, e.target.value)}
         name={name}
