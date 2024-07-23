@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ToggleButton from "../components/toggleButton";
 import checkIcon from "../assets/icons/newAlbum/check.svg";
 import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
 import deleteIcon from "../assets/icons/newAlbum/delete-1.svg";
+import editIcon from "../assets/icons/newAlbum/edit-4.svg";
 
 const Button = ({
   label,
@@ -305,7 +307,11 @@ const PodcastCard = ({ podcast, file, onDelete }) => {
         <div className="absolute bottom-0 left-0 w-full p-[12px] flex justify-between items-center bg-darkText_Dark bg-opacity-60">
           <h3 className="font-medium text-mdText truncate text-neutralText_Light">
             {podcast.title}
+            <button className="w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Light dark:bg-errorSurface_Dark p-[8px]">
+              <img src={editIcon} alt="Edit" />
+            </button>
           </h3>
+
           <div className="flex items-center rounded-full bg-brandSurface_Dark py-[4px] px-[8px]">
             <h2 className="text-xsText font-medium">
               {podcast.premium ? "Premium" : "Free"}
@@ -314,9 +320,27 @@ const PodcastCard = ({ podcast, file, onDelete }) => {
         </div>
       </Link>
 
-      <li>Default: {podcast.makeDefault ? "Yes" : "No"}</li>
-      <li>Visible on Portal: {podcast.visibleOnPortal ? "Yes" : "No"}</li>
-      <li>Description: {podcast.description}</li>
+      <ul>
+      <ToggleButton/>
+        <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+          Status: {podcast.status ? "Online" : "Offline"}
+        </li>
+        <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+          Premium: {podcast.premium ? "Premium" : "Free"}
+        </li>
+        <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+          Default: {podcast.makeDefault ? "Yes" : "No"}
+        </li>
+        <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+          Visible on Portal: {podcast.visibleOnPortal ? "Yes" : "No"}
+        </li>
+        <button className="w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Light dark:bg-errorSurface_Dark p-[8px]">
+          <img src={editIcon} alt="Edit" />
+        </button>
+        <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
+          Description: {podcast.description}{" "}
+        </li>
+      </ul>
     </>
   );
 };
@@ -334,7 +358,6 @@ export default function AddNewAlbumContent() {
   const [file, setFile] = useState(null);
   const [savedPodcast, setSavedPodcast] = useState(null);
   const [savedFile, setSavedFile] = useState(null);
- 
 
   const handleChange = (name, value) => {
     setPodcast({ ...podcast, [name]: value });
@@ -355,8 +378,6 @@ export default function AddNewAlbumContent() {
     });
     setFile(null);
   };
-
-
 
   const handleDelete = () => {
     setSavedPodcast(null);
