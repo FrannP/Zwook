@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ToggleButton from "../components/toggleButton";
 import checkIcon from "../assets/icons/newAlbum/check.svg";
 import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
 import deleteIcon from "../assets/icons/newAlbum/delete-1.svg";
-import editIcon from "../assets/icons/newAlbum/edit-4.svg";
+import Checkbox from "./Checkbox";
 
 const Button = ({
   label,
@@ -70,39 +69,6 @@ const TextInput = ({ label, placeholder, value, onChange, name }) => {
   );
 };
 
-const CheckboxInput = ({ label, checked, onChange, name }) => {
-  const handleCheckboxChange = () => {
-    onChange(name, !checked);
-  };
-
-  return (
-    <label className="flex items-center gap-[8px]">
-      <div className="relative">
-        <input
-          type="checkbox"
-          className={`appearance-none w-[16px] h-[16px] border-[1px] rounded-[4px] hover:cursor-pointer transition duration-500 ease-in-out ${
-            checked
-              ? "bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
-              : "bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark border-primaryBorder_Light dark:border-primaryBorder_Dark"
-          }`}
-          checked={checked}
-          onChange={handleCheckboxChange}
-          name={name}
-        />
-        {checked && (
-          <img
-            src={checkIcon}
-            alt="Checked"
-            className="absolute left-[50%] -ml-[5px] -mt-[6.5px] top-[50%] w-[10px] h-[10px] filter invert hover:cursor-pointer"
-          />
-        )}
-      </div>
-      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
-        {label}
-      </span>
-    </label>
-  );
-};
 
 const TextAreaInput = ({ label, placeholder, value, onChange, name }) => {
   return (
@@ -145,25 +111,25 @@ const Form = ({ podcast, onChange }) => {
         onChange={onChange}
         name="description"
       />
-      <CheckboxInput
+      <Checkbox
         label="Status"
         checked={podcast.status}
         onChange={onChange}
         name="status"
       />
-      <CheckboxInput
+      <Checkbox
         label="Premium"
         checked={podcast.premium}
         onChange={onChange}
         name="premium"
       />
-      <CheckboxInput
+      <Checkbox
         label="Make Default"
         checked={podcast.makeDefault}
         onChange={onChange}
         name="makeDefault"
       />
-      <CheckboxInput
+      <Checkbox
         label="Visible on the Portal"
         checked={podcast.visibleOnPortal}
         onChange={onChange}
@@ -307,9 +273,6 @@ const PodcastCard = ({ podcast, file, onDelete }) => {
         <div className="absolute bottom-0 left-0 w-full p-[12px] flex justify-between items-center bg-darkText_Dark bg-opacity-60">
           <h3 className="font-medium text-mdText truncate text-neutralText_Light">
             {podcast.title}
-            <button className="w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Light dark:bg-errorSurface_Dark p-[8px]">
-              <img src={editIcon} alt="Edit" />
-            </button>
           </h3>
 
           <div className="flex items-center rounded-full bg-brandSurface_Dark py-[4px] px-[8px]">
@@ -321,7 +284,6 @@ const PodcastCard = ({ podcast, file, onDelete }) => {
       </Link>
 
       <ul>
-      <ToggleButton/>
         <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
           Status: {podcast.status ? "Online" : "Offline"}
         </li>
@@ -334,9 +296,6 @@ const PodcastCard = ({ podcast, file, onDelete }) => {
         <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
           Visible on Portal: {podcast.visibleOnPortal ? "Yes" : "No"}
         </li>
-        <button className="w-[32px] h-[32px] rounded-[8px] bg-errorSurface_Light dark:bg-errorSurface_Dark p-[8px]">
-          <img src={editIcon} alt="Edit" />
-        </button>
         <li className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
           Description: {podcast.description}{" "}
         </li>
