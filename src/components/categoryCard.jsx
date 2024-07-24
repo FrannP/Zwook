@@ -7,7 +7,9 @@ export default function CategoryCard({ image, name }) {
     >
       <div className="flex flex-col gap-[8px]">
         <img className="w-[150px] h-[150px]" src={image} alt="" />
-        <p className="leading-mdText text-primaryText_Light dark:text-primaryText_Dark font-medium text-md">{name}</p>
+        <p className="leading-mdText text-primaryText_Light dark:text-primaryText_Dark font-medium text-md">
+          {name}
+        </p>
       </div>
     </div>
   );

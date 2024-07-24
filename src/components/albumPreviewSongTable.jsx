@@ -14,7 +14,6 @@ import cardImageEleven from "../assets/cardImageEleven.svg";
 import cardImageTwelve from "../assets/cardImageEleven.svg";
 import cardImageThirteen from "../assets/cardImageThirteen.svg";
 
-
 const AlbumSong = ({
   id,
   titleCover,
@@ -158,21 +157,21 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-        titleCover: cardImageTwelve,
-        title: "Lost in the Echoes",
-        titleSubtext: "The Wanderers",
-        album: "Shadows of the Past",
-        dateAdded: "03/03/2024",
-        songTime: "3:03",
-      },
-      {
-        titleCover: cardImageThirteen,
-        title: "Lost in the Echoes",
-        titleSubtext: "The Wanderers",
-        album: "Shadows of the Past",
-        dateAdded: "03/03/2024",
-        songTime: "3:03",
-      },
+      titleCover: cardImageTwelve,
+      title: "Lost in the Echoes",
+      titleSubtext: "The Wanderers",
+      album: "Shadows of the Past",
+      dateAdded: "03/03/2024",
+      songTime: "3:03",
+    },
+    {
+      titleCover: cardImageThirteen,
+      title: "Lost in the Echoes",
+      titleSubtext: "The Wanderers",
+      album: "Shadows of the Past",
+      dateAdded: "03/03/2024",
+      songTime: "3:03",
+    },
   ];
 
   return (

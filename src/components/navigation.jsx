@@ -122,4 +122,4 @@ export default function Navigation() {
     </div>
   );
 }
-//TODO: change how svgs lode and add modifiers: --active for selected nav item, --light and --dark for theme changes 
+//TODO: change how svgs lode and add modifiers: --active for selected nav item, --light and --dark for theme changes

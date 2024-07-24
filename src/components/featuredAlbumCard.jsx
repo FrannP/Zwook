@@ -20,11 +20,15 @@ const FeaturedCard = ({ link, title, description, img }) => (
         alt=""
       />
       <div className="flex flex-col-reverse ">
-        <p className="leading-md font-semiBold text-mdText truncate text-neutralText_Light dark:text-neutralText_Light">{description}</p>
+        <p className="leading-md font-semiBold text-mdText truncate text-neutralText_Light dark:text-neutralText_Light">
+          {description}
+        </p>
         <h1 className="text-neutralText_Light dark:text-neutralText_Light leading-[94px] font-medium text-xl2Display truncate">
           {title}
         </h1>
-        <h4 className="dark:text-neutralText_Light text-neutralText_Light leading-md text-mdText font-semiBold">Playlist</h4>
+        <h4 className="dark:text-neutralText_Light text-neutralText_Light leading-md text-mdText font-semiBold">
+          Playlist
+        </h4>
       </div>
     </div>
   </Link>

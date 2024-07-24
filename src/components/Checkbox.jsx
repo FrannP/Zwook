@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import checkIcon from "../assets/icons/newAlbum/check.svg";
 
 export default function Checkbox({ label, checked, onChange, name }) {

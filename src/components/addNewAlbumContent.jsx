@@ -69,7 +69,6 @@ const TextInput = ({ label, placeholder, value, onChange, name }) => {
   );
 };
 
-
 const TextAreaInput = ({ label, placeholder, value, onChange, name }) => {
   return (
     <label className="flex flex-col gap-[8px]">

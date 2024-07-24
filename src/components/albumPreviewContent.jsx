@@ -7,7 +7,7 @@ export default function albumPreviewContent() {
     <div className="flex flex-col gap-[30px]">
       <FeaturedAlbumCard />
       <section>
-        <AlbumPreviewSongTable/>
+        <AlbumPreviewSongTable />
       </section>
     </div>
   );

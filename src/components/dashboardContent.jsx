@@ -12,7 +12,6 @@ export default function DashboardContent() {
         <FeaturedSection />
         <CategoriesSection />
       </section>
-
     </div>
   );
 }

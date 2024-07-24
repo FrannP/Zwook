@@ -10,7 +10,6 @@ import cardImageSix from "../assets/cardImageSix.svg";
 import cardImageSeven from "../assets/cardImageSeven.svg";
 import cardImageEight from "../assets/cardImageEight.svg";
 
-
 const FeaturedCardContainer = () => (
   <section className="flex gap-[20px]">
     <CategoryCard name="Kiss Dorka" image={cardImageOne} />
@@ -31,7 +30,7 @@ export default function PodcastContainer() {
         title="Featured"
         buttonLabels={["All", "Premium", "Disabled"]}
       />
-      <FeaturedCardContainer/>
+      <FeaturedCardContainer />
     </div>
   );
 }

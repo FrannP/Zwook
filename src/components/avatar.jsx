@@ -18,12 +18,20 @@ export default function Avatar({
     <div className="flex items-center gap-[8px]">
       <div className="relative">
         <div className={`${imgBorder}`}>
-          <img className={`${imgWidth} ${imgHeight} rounded-[3px]`} src={img} alt="Avatar" />
+          <img
+            className={`${imgWidth} ${imgHeight} rounded-[3px]`}
+            src={img}
+            alt="Avatar"
+          />
         </div>
         <Status isVisible={statusVisible} />
       </div>
       <div>
-        <h3 className={`text-primaryText_Light dark:text-primaryText_Dark ${fontWeight} ${textSize}`}>{mainText}</h3>
+        <h3
+          className={`text-primaryText_Light dark:text-primaryText_Dark ${fontWeight} ${textSize}`}
+        >
+          {mainText}
+        </h3>
         <div className="text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark font-medium text-smText">
           {bottomText}
         </div>

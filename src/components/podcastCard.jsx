@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function PodcastCard({ title, category, status, img, link }) {
-  const statusColorClass = status === "online" ? "bg-successSurface_Dark" : "bg-errorSurface_Dark";
-  const statusTextClass = status === "online" ? "text-successSurface_Dark" : "text-errorSurface_Dark";
+  const statusColorClass =
+    status === "online" ? "bg-successSurface_Dark" : "bg-errorSurface_Dark";
+  const statusTextClass =
+    status === "online" ? "text-successSurface_Dark" : "text-errorSurface_Dark";
 
   return (
     <Link
@@ -17,7 +19,9 @@ export default function PodcastCard({ title, category, status, img, link }) {
       />
 
       <div className="absolute top-[12px] right-[12px] flex items-center gap-[8px] rounded-full bg-[#413F3A] bg-opacity-80 px-[8px] py-[4px]">
-        <div className={`h-[12px] w-[12px] rounded-full ${statusColorClass}`}></div>
+        <div
+          className={`h-[12px] w-[12px] rounded-full ${statusColorClass}`}
+        ></div>
         <div className={`font-medium text-smText ${statusTextClass}`}>
           {status === "online" ? "Online" : "Offline"}
         </div>

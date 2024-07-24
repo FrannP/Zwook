@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import soundIcon from "../assets/icons/musicControls/soundIcon.svg"
+import React, { useState } from "react";
+import soundIcon from "../assets/icons/musicControls/soundIcon.svg";
 
 export default function VolumeSlider() {
-    const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(50);
 
-    const handleVolumeChange = (event) => {
-      setVolume(event.target.value);
-    };
-    return (
-        <div className="flex justify-center items-center gap-[12px]">
-        <img className='w-[20px] h-[20px]' src={soundIcon} alt="" />
+  const handleVolumeChange = (event) => {
+    setVolume(event.target.value);
+  };
+  return (
+    <div className="flex justify-center items-center gap-[12px]">
+      <img className="w-[20px] h-[20px]" src={soundIcon} alt="" />
 
       <div className="w-[172px] h-[3px] bg-primaryLighterBorder_Light dark:bg-primaryLighterBorder_Dark relative rounded-[3px]">
         <input
@@ -26,6 +26,5 @@ export default function VolumeSlider() {
         ></div>
       </div>
     </div>
-    );
-  }
-  
+  );
+}

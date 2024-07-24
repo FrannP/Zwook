@@ -1,6 +1,5 @@
 import warningIcon from "../assets/icons/login/warning.svg";
 
-
 export default function TextInput({
   placeholder,
   type,
@@ -14,7 +13,7 @@ export default function TextInput({
     <div className="relative">
       {error && errorMessage && (
         <div className="items-center flex gap-[4px] absolute top-[-18px] text-errorBorder_Light dark:text-errorBorder_Dark font-medium text-smText h-[16px]">
-        <img className="w-[12px] h-[12px]" src={warningIcon} alt="" />
+          <img className="w-[12px] h-[12px]" src={warningIcon} alt="" />
           {errorMessage}
         </div>
       )}

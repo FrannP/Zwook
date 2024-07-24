@@ -8,7 +8,7 @@ export default function Dashboard() {
     <div className="flex text-primaryText_Dark dark:text-primaryText_Dark min-h-screen bg-primaryBackground_Light dark:bg-primaryBackground_Dark">
       <Navigation />
       <div className="flex-grow">
-      <div className="absolute top-[92px] left-[332px] right-[36px] ">
+        <div className="absolute top-[92px] left-[332px] right-[36px] ">
           <AddNewAlbumContent />
         </div>
         <Header />

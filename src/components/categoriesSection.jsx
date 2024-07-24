@@ -26,11 +26,8 @@ const CategoriesCardContainer = () => (
 export default function PodcastContainer() {
   return (
     <div className="flex flex-col gap-[20px]">
-      <DashboardSectionHeader
-        title="Categories"
-        buttonLabels={["View All"]}
-      />
-      <CategoriesCardContainer/>
+      <DashboardSectionHeader title="Categories" buttonLabels={["View All"]} />
+      <CategoriesCardContainer />
     </div>
   );
 }
