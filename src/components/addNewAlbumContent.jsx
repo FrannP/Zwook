@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import checkIcon from "../assets/icons/newAlbum/check.svg";
 import cloudUploadIcon from "../assets/icons/newAlbum/cloud-upload.svg";
 import deleteIcon from "../assets/icons/newAlbum/delete-1.svg";
 import Checkbox from "./Checkbox";
+import TextInput from "../components/textInput";
 
 const Button = ({
   label,
@@ -51,24 +51,6 @@ const Header = ({ onSave }) => {
   );
 };
 
-const TextInput = ({ label, placeholder, value, onChange, name }) => {
-  return (
-    <label className="flex flex-col gap-[8px]">
-      <span className="font-regular text-mdText text-primaryText_Light dark:text-primaryText_Dark">
-        {label}
-      </span>
-      <input
-        type="text"
-        placeholder={placeholder}
-        className="text-mdText font-regular placeholder:text-primaryPlaceholderText_Light dark:placeholder:text-primaryPlaceholderText_Dark text-primaryText_Light dark:text-primaryText_Dark border-[1px] p-[8px] rounded-[4px] border-primaryBorder_Light dark:border-primaryBorder_Dark bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark"
-        value={value}
-        onChange={(e) => onChange(name, e.target.value)}
-        name={name}
-      />
-    </label>
-  );
-};
-
 const TextAreaInput = ({ label, placeholder, value, onChange, name }) => {
   return (
     <label className="flex flex-col gap-[8px]">
@@ -93,15 +75,19 @@ const Form = ({ podcast, onChange }) => {
         label="Title"
         placeholder="Enter station title"
         value={podcast.title}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.name, e.target.value)}
         name="title"
+        type="text"
+        error={false}
       />
       <TextInput
         label="Description link"
         placeholder="Enter website URL"
         value={podcast.descriptionLink}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.name, e.target.value)}
         name="descriptionLink"
+        type="text"
+        error={false}
       />
       <TextAreaInput
         label="Description"

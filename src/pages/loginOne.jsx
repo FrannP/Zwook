@@ -67,8 +67,8 @@ const Form = ({
 );
 
 const OrSeparator = () => (
-  <div className=" inline-flex items-center justify-center h-[20px] w-full">
-    <hr className="w-full h-px my-8  border-0 bg-primaryBorder_Light dark:bg-primaryBorder_Dark" />
+  <div className="inline-flex items-center justify-center h-[20px] w-full">
+    <hr className="w-full h-px my-8 bg-gray-200 border-0 bg-primaryBorder_Light dark:bg-primaryBorder_Dark" />
     <span className="absolute px-4 font-regular text-mdText text-primaryPlaceholderText_Light dark:text-primaryPlaceholderText_Dark -translate-x-1/2 bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark left-1/2">
       or
     </span>
@@ -108,7 +108,7 @@ const Decorations = () => {
   }, []);
 
   return (
-    <div className="invisible 2xl:visible absolute h-full bg-warningSurface_Light dark:bg-warningSurface_Dark w-[898px] right-0">
+    <div className="invisible xl:visible absolute h-full bg-warningSurface_Light dark:bg-warningSurface_Dark w-[898px] right-0">
       <img src="src/assets/loginDecoOne.svg" alt="" />
       <img
         className="absolute bottom-20 right-0"
@@ -178,9 +178,9 @@ export default function Login() {
   };
 
   return (
-    <div className="absolute inset-0 dark:bg-secondaryBackground_Dark bg-secondaryBackground_Light sm:bg-primaryBackground_Light sm:dark:bg-primaryBackground_Dark flex items-center justify-center lg:items-start lg:justify-start lg:flex lg:items-center lg:justify-center">
+    <div className="absolute inset-0 bg-primaryBackground_Light dark:bg-primaryBackground_Dark flex items-center justify-center md:items-start md:justify-start md:flex md:items-center md:justify-center">
       <Decorations />
-      <div className="flex flex-col bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-none sm:border-primaryBorder_Light sm:dark:border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Light dark:text-primaryText_Dark lg:absolute lg:top-1/2 lg:right-[1172px] lg:left-[274px] lg:transform lg:-translate-y-1/2">
+      <div className="flex flex-col bg-secondaryBackground_Light dark:bg-secondaryBackground_Dark rounded-[16px] border-solid border-[1px] border-primaryBorder_Light dark:border-primaryBorder_Dark gap-[20px] p-[24px] h-[468px] w-[474px] text-primaryText_Light dark:text-primaryText_Dark md:absolute md:top-1/2 md:right-[1172px] md:left-[274px] md:transform md:-translate-y-1/2">
         <div className="flex flex-col gap-[20px]">
           <Header />
           <SignupPrompt />
