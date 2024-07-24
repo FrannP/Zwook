@@ -1,5 +1,19 @@
 import React from "react";
 import Avatar from "./avatar";
+import cardImageOne from "../assets/cardImageOne.svg";
+import cardImageTwo from "../assets/cardImageTwo.svg";
+import cardImageThree from "../assets/cardImageThree.svg";
+import cardImageFour from "../assets/cardImageFour.svg";
+import cardImageFive from "../assets/cardImageFive.svg";
+import cardImageSix from "../assets/cardImageSix.svg";
+import cardImageSeven from "../assets/cardImageSeven.svg";
+import cardImageEight from "../assets/cardImageEight.svg";
+import cardImageNine from "../assets/cardImageNine.svg";
+import cardImageTen from "../assets/cardImageTen.svg";
+import cardImageEleven from "../assets/cardImageEleven.svg";
+import cardImageTwelve from "../assets/cardImageEleven.svg";
+import cardImageThirteen from "../assets/cardImageThirteen.svg";
+
 
 const AlbumSong = ({
   id,
@@ -56,7 +70,7 @@ const TableHead = ({ text, customStyles }) => {
 export default function AlbumPreviewSongTable() {
   const songs = [
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageOne,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -64,7 +78,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageTwo,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -72,7 +86,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageThree,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -80,7 +94,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageFour,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -88,7 +102,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageFive,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -96,7 +110,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageSix,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -104,7 +118,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageSeven,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -112,7 +126,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageEight,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -120,7 +134,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageNine,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -128,7 +142,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageTen,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -136,7 +150,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-      titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+      titleCover: cardImageEleven,
       title: "Lost in the Echoes",
       titleSubtext: "The Wanderers",
       album: "Shadows of the Past",
@@ -144,7 +158,7 @@ export default function AlbumPreviewSongTable() {
       songTime: "3:03",
     },
     {
-        titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+        titleCover: cardImageTwelve,
         title: "Lost in the Echoes",
         titleSubtext: "The Wanderers",
         album: "Shadows of the Past",
@@ -152,7 +166,7 @@ export default function AlbumPreviewSongTable() {
         songTime: "3:03",
       },
       {
-        titleCover: "src/assets/albumPreviewImages/albumCover.svg",
+        titleCover: cardImageThirteen,
         title: "Lost in the Echoes",
         titleSubtext: "The Wanderers",
         album: "Shadows of the Past",
