@@ -5,7 +5,7 @@ import CategoryCard from "../components/categoryCard";
 import emailIcon from "../assets/icons/emailIcon.svg";
 import passwordIcon from "../assets/icons/lock-2.svg";
 import lunaNova from "../assets/lunaNova.png";
-import phantomEchoes from "../assets/phantomEchoes.png";
+import phantomEchoes from "../assets/cardImageThree.svg";
 
 const Header = () => (
   <div className="flex flex-col items-center gap-[20px] justify-center">
